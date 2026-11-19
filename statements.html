@@ -1,149 +1,199 @@
 
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Statements | Oakbridge Financial Bank</title>
-
+<title>Oakbridge Financial Bank | Account Statement</title>
 <style>
-
 *{box-sizing:border-box}
-
-body{margin:0;font-family:Arial,sans-serif;background:#f4f6fa;color:#17243b}
-
-header{background:#071b35;padding:20px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
-
-.logo{color:#d6b45d;font-size:22px;font-weight:bold}
-
-nav{display:flex;gap:16px;flex-wrap:wrap}
-
-nav a{color:white;text-decoration:none;font-size:14px}
-
-nav a:hover{color:#d6b45d}
-
-main{max-width:1000px;margin:40px auto;padding:20px}
-
-.card{background:white;padding:28px;border-radius:14px;box-shadow:0 5px 25px #10213b12;margin-bottom:22px}
-
-h1,h2{color:#071b35}
-
-.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px}
-
-.summary div{background:#f5f7fa;padding:18px;border-radius:9px}
-
-.summary small{color:#68758a}
-
-.summary h2{margin:10px 0}
-
-table{width:100%;border-collapse:collapse;margin-top:20px}
-
-th,td{text-align:left;padding:15px;border-bottom:1px solid #e7eaf0;font-size:14px}
-
-th{background:#071b35;color:white}
-
-.credit{color:#198754;font-weight:bold}
-
-.debit{color:#b33a3a;font-weight:bold}
-
-.notice{background:#fff6df;padding:15px;border-radius:8px;color:#745719;font-size:13px;line-height:1.7;margin-top:22px}
-
-footer{text-align:center;color:#777;padding:25px;font-size:13px}
-
+body{margin:0;background:#f3f5f9;color:#17243b;font-family:Arial,sans-serif}
+header{background:#071b3a;color:white;padding:20px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.brand{font-weight:bold;font-size:20px;letter-spacing:1px}
+nav{display:flex;gap:15px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-size:13px}
+main{max-width:1100px;margin:30px auto;padding:0 18px}
+h1{font-size:27px;margin-bottom:5px}
+.muted{color:#718096;font-size:13px}
+.statement{background:white;padding:25px;border:1px solid #e2e7ef;border-radius:12px;margin-top:25px;box-shadow:0 4px 15px #1020400b}
+.top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.bank{color:#09234a;font-size:19px;font-weight:bold}
+.details{line-height:1.8;font-size:13px;color:#52627b}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin:25px 0}
+.metric{background:#f6f8fc;border:1px solid #e8edf4;padding:16px;border-radius:8px}
+.metric span{display:block;color:#718096;font-size:12px;margin-bottom:8px}
+.metric strong{font-size:19px;color:#09234a}
+.table-wrap{overflow-x:auto;margin-top:18px}
+table{width:100%;border-collapse:collapse;min-width:780px;font-size:12px}
+th{text-align:left;padding:13px 9px;background:#f5f7fb;color:#65738a}
+td{padding:14px 9px;border-bottom:1px solid #edf0f5}
+.credit{color:#168451;font-weight:bold}
+.debit{color:#c04a4a;font-weight:bold}
+.status{background:#e8f6ee;color:#168451;border-radius:20px;padding:5px 8px;font-size:10px;font-weight:bold}
+.actions{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap}
+button{background:#09234a;color:white;border:0;padding:12px 18px;border-radius:7px;font-size:13px}
+.notice{background:#fff8e8;border-left:4px solid #c89b36;padding:13px;margin-top:20px;font-size:12px;line-height:1.6;color:#6e592b}
+footer{text-align:center;color:#718096;font-size:12px;padding:25px}
+@media(max-width:600px){header{align-items:flex-start;flex-direction:column}.statement{padding:15px}h1{font-size:23px}}
+@media print{header,nav,.actions,footer{display:none!important}body{background:white}.statement{box-shadow:none;border:0}main{margin:0;max-width:none}}
 </style>
-
 </head>
-
 <body>
-
 <header>
-
-<div class="logo">OAKBRIDGE</div>
-
+<div class="brand">OAKBRIDGE FINANCIAL BANK</div>
 <nav>
-
 <a href="index.html">Home</a>
-
 <a href="dashboard.html">Dashboard</a>
-
 <a href="transfers.html">Transfers</a>
-
 <a href="statements.html">Statements</a>
-
 <a href="profile.html">Profile</a>
-
+<a href="contact.html">Contact</a>
+<a href="login.html">Logout</a>
 </nav>
-
 </header>
 
 <main>
-
-<div class="card">
-
 <h1>Account Statement</h1>
+<p class="muted">Checking account activity · November 1–30, 2026</p>
 
-<p>Sample monthly account statement</p>
-
-<p><strong>Customer:</strong> Alex Morgan (DEMO)</p>
-
-<p><strong>Account:</strong> DEMO-2048</p>
-
-<p><strong>Statement Period:</strong> November 1 – November 30, 2026</p>
-
+<div class="statement">
+<div class="top">
+<div>
+<div class="bank">OAKBRIDGE FINANCIAL BANK</div>
+<p class="details">Personal Checking Account<br>Account Holder: Gretchen King<br>Account Number: *****4821</p>
 </div>
-
-<div class="card">
-
-<h2>Account Overview</h2>
+<div class="details">
+<strong>STATEMENT PERIOD</strong><br>
+November 1–30, 2026<br>
+Currency: USD
+</div>
+</div>
 
 <div class="summary">
-
-<div><small>Opening Balance</small><h2>$21,350.00</h2></div>
-
-<div><small>Total Credits</small><h2>$4,500.00</h2></div>
-
-<div><small>Total Debits</small><h2>$370.00</h2></div>
-
-<div><small>Closing Balance</small><h2>$25,480.00</h2></div>
-
+<div class="metric"><span>Opening Balance</span><strong>$44,000.00</strong></div>
+<div class="metric"><span>Total Credits</span><strong>$6,000.00</strong></div>
+<div class="metric"><span>Total Debits</span><strong>$4,000.00</strong></div>
+<div class="metric"><span>Closing Balance</span><strong>$46,000.00</strong></div>
 </div>
 
-</div>
-
-<div class="card">
-
-<h2>Transaction History</h2>
-
+<h2 style="font-size:18px">Transaction Details</h2>
+<div class="table-wrap">
 <table>
-
-<tr><th>Date</th><th>Description</th><th>Reference</th><th>Amount</th></tr>
-
-<tr><td>Nov 15</td><td>Salary Credit (DEMO)</td><td>DEMO001</td><td class="credit">+$4,500.00</td></tr>
-
-<tr><td>Nov 12</td><td>Shopping (DEMO)</td><td>DEMO002</td><td class="debit">-$250.00</td></tr>
-
-<tr><td>Nov 10</td><td>Utility Bill (DEMO)</td><td>DEMO003</td><td class="debit">-$120.00</td></tr>
-
+<thead>
+<tr>
+<th>Date</th>
+<th>Description</th>
+<th>Reference ID</th>
+<th>Debit</th>
+<th>Credit</th>
+<th>Status</th>
+<th>Balance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nov 03, 2026</td>
+<td>Utility Bill Payment</td>
+<td>OBF-261103-101</td>
+<td class="debit">-$200.00</td>
+<td>—</td>
+<td><span class="status">Completed</span></td>
+<td>$43,800.00</td>
+</tr>
+<tr>
+<td>Nov 06, 2026</td>
+<td>Retail Purchase</td>
+<td>OBF-261106-102</td>
+<td class="debit">-$300.00</td>
+<td>—</td>
+<td><span class="status">Completed</span></td>
+<td>$43,500.00</td>
+</tr>
+<tr>
+<td>Nov 10, 2026</td>
+<td>Incoming Account Credit</td>
+<td>OBF-261110-103</td>
+<td>—</td>
+<td class="credit">+$1,000.00</td>
+<td><span class="status">Completed</span></td>
+<td>$44,500.00</td>
+</tr>
+<tr>
+<td>Nov 12, 2026</td>
+<td>Online Purchase</td>
+<td>OBF-261112-104</td>
+<td class="debit">-$500.00</td>
+<td>—</td>
+<td><span class="status">Completed</span></td>
+<td>$44,000.00</td>
+</tr>
+<tr>
+<td>Nov 14, 2026</td>
+<td>Account Deposit</td>
+<td>OBF-261114-105</td>
+<td>—</td>
+<td class="credit">+$2,000.00</td>
+<td><span class="status">Completed</span></td>
+<td>$46,000.00</td>
+</tr>
+<tr>
+<td>Nov 18, 2026</td>
+<td>Grocery Purchase</td>
+<td>OBF-261118-106</td>
+<td class="debit">-$250.00</td>
+<td>—</td>
+<td><span class="status">Completed</span></td>
+<td>$45,750.00</td>
+</tr>
+<tr>
+<td>Nov 22, 2026</td>
+<td>Salary Deposit</td>
+<td>OBF-261122-107</td>
+<td>—</td>
+<td class="credit">+$3,000.00</td>
+<td><span class="status">Completed</span></td>
+<td>$48,750.00</td>
+</tr>
+<tr>
+<td>Nov 25, 2026</td>
+<td>Insurance Payment</td>
+<td>OBF-261125-108</td>
+<td class="debit">-$750.00</td>
+<td>—</td>
+<td><span class="status">Completed</span></td>
+<td>$48,000.00</td>
+</tr>
+<tr>
+<td>Nov 28, 2026</td>
+<td>Service and Subscription Payments</td>
+<td>OBF-261128-109</td>
+<td class="debit">-$1,000.00</td>
+<td>—</td>
+<td><span class="status">Completed</span></td>
+<td>$47,000.00</td>
+</tr>
+<tr>
+<td>Nov 30, 2026</td>
+<td>Monthly Account Adjustment</td>
+<td>OBF-261130-110</td>
+<td class="debit">-$1,000.00</td>
+<td>—</td>
+<td><span class="status">Completed</span></td>
+<td>$46,000.00</td>
+</tr>
+</tbody>
 </table>
+</div>
 
 <div class="notice">
-
-<strong>Fictional demonstration statement.</strong> All balances, dates, account numbers and transactions are sample information. This is not an official bank statement.
-
+<strong>Fictional banking demonstration:</strong> This statement, account information, balances, transaction descriptions and reference IDs are fabricated examples. It is not an official bank statement and does not represent actual financial activity.
+</div>
 </div>
 
+<div class="actions">
+<button onclick="window.print()">Print Statement</button>
 </div>
-
 </main>
-
-<footer>© 2026 Oakbridge Financial Bank — Fictional Demo</footer>
-
+<footer>Oakbridge Financial Bank · Fictional Website Demonstration Only</footer>
 </body>
-
 </html>
