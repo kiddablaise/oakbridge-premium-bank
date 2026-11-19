@@ -1,93 +1,66 @@
 
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Login | Oakbridge Financial Bank</title>
-
+<title>Oakbridge Financial Bank | Login</title>
 <style>
-
 *{box-sizing:border-box}
-
-body{margin:0;font-family:Arial,sans-serif;background:#071b35;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
-
-.card{background:white;width:100%;max-width:430px;padding:35px;border-radius:16px}
-
-h1{color:#071b35;margin-bottom:8px}
-
-.brand{color:#b18b35;font-weight:bold;letter-spacing:2px}
-
-p{color:#68758a;line-height:1.5}
-
-label{display:block;margin-top:20px;margin-bottom:8px;font-size:14px}
-
-input{width:100%;padding:14px;border:1px solid #dce1e8;border-radius:8px;font-size:16px}
-
-button{width:100%;padding:15px;margin-top:25px;background:#b18b35;color:white;border:0;border-radius:8px;font-size:16px;font-weight:bold}
-
-button:active{opacity:.8}
-
-.notice{background:#fff6df;padding:14px;border-radius:8px;font-size:12px;margin-top:20px;color:#745719}
-
-a{color:#9b7727;text-decoration:none}
-
+body{margin:0;background:#f2f4f8;font-family:Arial,sans-serif;color:#17243b;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+.login-box{background:white;width:100%;max-width:420px;padding:35px 28px;border-radius:14px;box-shadow:0 8px 30px #10204018}
+.brand{text-align:center;color:#09234a;font-size:22px;font-weight:bold;letter-spacing:1px}
+.gold{text-align:center;color:#bd963e;font-size:12px;margin:8px 0 28px}
+h1{text-align:center;font-size:23px;margin-bottom:8px}
+.subtitle{text-align:center;color:#718096;font-size:13px;margin-bottom:28px}
+label{display:block;font-size:13px;font-weight:bold;margin:16px 0 8px}
+input{width:100%;padding:14px;border:1px solid #dce2eb;border-radius:7px;font-size:15px}
+button{width:100%;padding:14px;background:#09234a;color:white;border:0;border-radius:7px;font-size:15px;font-weight:bold;margin-top:22px}
+#error{color:#c03939;text-align:center;font-size:13px;margin-top:15px}
+.notice{background:#fff8e8;color:#705a29;padding:12px;border-radius:7px;font-size:11px;line-height:1.6;margin-top:22px}
+footer{text-align:center;color:#8792a3;font-size:11px;margin-top:24px}
 </style>
-
 </head>
-
 <body>
-
-<div class="card">
-
-<div class="brand">OAKBRIDGE FINANCIAL BANK</div>
+<div class="login-box">
+<div class="brand">OAKBRIDGE</div>
+<div class="gold">FINANCIAL BANK</div>
 
 <h1>Welcome Back</h1>
+<p class="subtitle">Sign in to access your banking dashboard.</p>
 
-<p>Enter any sample details to explore this fictional banking demonstration.</p>
+<form id="loginForm">
+<label for="username">Username</label>
+<input id="username" type="text" placeholder="Enter your username" required>
 
-<form id="demoLogin">
+<label for="password">Password</label>
+<input id="password" type="password" placeholder="Enter your password" required>
 
-<label for="demoName">Demo username</label>
-
-<input id="demoName" type="text" placeholder="Enter any sample name" required>
-
-<label for="demoPassword">Demo password</label>
-
-<input id="demoPassword" type="password" placeholder="Enter any sample text" required>
-
-<button type="submit">Enter Demo Dashboard</button>
-
+<button type="submit">Sign In</button>
+<p id="error"></p>
 </form>
 
 <div class="notice">
-
-<strong>Demo only:</strong> Do not enter real banking usernames, passwords or financial information. This form does not authenticate users or store credentials.
-
+<strong>Fictional demonstration only.</strong> This public website uses a visible, insecure demo login. Never enter real banking credentials or personal financial information.
 </div>
 
-<p><a href="index.html">← Back to Home</a></p>
-
+<footer>© 2026 Oakbridge Financial Bank</footer>
 </div>
 
 <script>
-
-document.getElementById("demoLogin").addEventListener("submit", function(event) {
-
+document.getElementById("loginForm").addEventListener("submit",function(event){
 event.preventDefault();
 
-window.location.href = "dashboard.html";
+const username=document.getElementById("username").value;
+const password=document.getElementById("password").value;
+const error=document.getElementById("error");
 
+if(username==="Gretchel22" && password==="King22"){
+window.location.href="dashboard.html";
+}else{
+error.textContent="Incorrect username or password. Please try again.";
+}
 });
-
 </script>
-
 </body>
-
 </html>
