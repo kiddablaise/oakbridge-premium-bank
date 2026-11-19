@@ -16,39 +16,41 @@
 
 *{box-sizing:border-box}
 
-body{margin:0;font-family:Arial,sans-serif;background:#f4f6fa;color:#17243b}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6fa;color:#17243a}
 
-header{background:#071b35;padding:20px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+header{background:#071b36;color:white;padding:22px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
 
-.logo{color:#d6b45d;font-size:22px;font-weight:bold}
+.logo{color:#d9b45b;font-size:23px;font-weight:bold;letter-spacing:2px}
 
-nav{display:flex;gap:16px;flex-wrap:wrap}
+nav{display:flex;flex-wrap:wrap;gap:15px}
 
 nav a{color:white;text-decoration:none;font-size:14px}
 
-nav a:hover{color:#d6b45d}
+.hero{background:#102d50;color:white;text-align:center;padding:45px 20px}
 
-main{max-width:760px;margin:45px auto;padding:20px}
+.container{max-width:650px;margin:35px auto;padding:20px}
 
-.card{background:white;padding:30px;border-radius:14px;box-shadow:0 5px 25px #10213b12}
+.card{background:white;padding:30px;border-radius:12px;box-shadow:0 5px 20px #0000000d}
 
-h1{color:#071b35;margin-top:0}
+h2{color:#102d50}
 
-.subtitle{color:#68758a;line-height:1.6}
+label{display:block;margin:17px 0 7px;font-weight:bold}
 
-label{display:block;margin:20px 0 8px;font-size:14px;font-weight:bold}
+input{width:100%;padding:13px;border:1px solid #ccd3dd;border-radius:6px;font-size:15px}
 
-input,select{width:100%;padding:14px;border:1px solid #dce1e8;border-radius:7px;font-size:15px;background:white}
+button{width:100%;background:#c49a42;color:#071b36;border:0;padding:15px;border-radius:6px;font-weight:bold;font-size:16px;margin-top:22px}
 
-button{width:100%;padding:15px;background:#b18b35;color:white;border:0;border-radius:7px;font-size:16px;font-weight:bold;margin-top:25px}
+.warning{display:none;background:#fff3df;border:1px solid #d9a441;border-radius:8px;padding:20px;margin-top:22px;line-height:1.7}
 
-button:active{opacity:.8}
+.warning h3{color:#9b6710;margin-top:0}
 
-.notice{background:#fff6df;padding:15px;border-radius:8px;color:#745719;font-size:13px;line-height:1.7;margin-top:22px}
+.warning a{color:#102d50;font-weight:bold;overflow-wrap:anywhere}
 
-#result{display:none;background:#edf5ed;padding:15px;margin-top:20px;border-radius:8px;color:#245b32;line-height:1.6}
+.notice{font-size:13px;color:#657186;line-height:1.6;margin-top:18px}
 
-footer{text-align:center;color:#777;padding:25px;font-size:13px}
+footer{background:#071b36;color:white;text-align:center;padding:25px;font-size:13px}
+
+@media(max-width:650px){header{gap:15px}.container{margin:15px auto}.card{padding:22px}}
 
 </style>
 
@@ -76,65 +78,71 @@ footer{text-align:center;color:#777;padding:25px;font-size:13px}
 
 </header>
 
-<main>
+<section class="hero">
 
-<div class="card">
+<h1>Transfers</h1>
 
-<h1>Demo Transfer</h1>
+<p>Oakbridge Digital Banking Demonstration</p>
 
-<p class="subtitle">Explore the Oakbridge sample transfer interface.</p>
+</section>
+
+<main class="container">
+
+<section class="card">
+
+<h2>Transfer Preview</h2>
 
 <form id="transferForm">
 
 <label for="recipient">Recipient Name</label>
 
-<input id="recipient" type="text" placeholder="Sample recipient name" required>
+<input id="recipient" type="text" placeholder="Enter sample recipient name" required>
 
 <label for="bank">Receiving Bank</label>
 
-<select id="bank" required>
+<input id="bank" type="text" placeholder="Enter sample bank name" required>
 
-<option value="">Select sample bank</option>
+<label for="account">Account Number</label>
 
-<option>Oakbridge Demo Bank</option>
+<input id="account" type="text" inputmode="numeric" placeholder="Enter sample account number" required>
 
-<option>Sample National Bank</option>
+<label for="amount">Transfer Amount (USD)</label>
 
-<option>Example Trust Bank</option>
+<input id="amount" type="number" min="0.01" step="0.01" placeholder="Enter sample amount" required>
 
-</select>
-
-<label for="account">Sample Account Number</label>
-
-<input id="account" type="text" placeholder="Enter sample number" required>
-
-<label for="amount">Transfer Amount</label>
-
-<input id="amount" type="number" min="1" step="0.01" placeholder="Enter sample amount" required>
-
-<button type="submit">Preview Demo Transfer</button>
+<button type="submit">Submit Transfer</button>
 
 </form>
 
-<div id="result">
+<div class="warning" id="transferWarning" role="alert">
 
-<strong>Demo preview only.</strong><br>
+<h3>Transfer Warning</h3>
 
-No money has been sent, and no transfer has taken place.
+<strong>We were unable to process your transfer.</strong>
 
-</div>
+<p>Please contact customer support for assistance.</p>
 
-<div class="notice">
-
-<strong>Important:</strong> This is a fictional banking demonstration. Do not enter real bank account information. No payments or transfers are processed.
+<a href="mailto:oakbridgefinancialbank.org@gmail.com">oakbridgefinancialbank.org@gmail.com</a>
 
 </div>
 
-</div>
+<p class="notice">
+
+Fictional banking demonstration only. This form does not process transfers, send money, or store financial information. All entries should be sample information only.
+
+</p>
+
+</section>
 
 </main>
 
-<footer>© 2026 Oakbridge Financial Bank — Fictional Demo</footer>
+<footer>
+
+<p>© 2026 Oakbridge Financial Bank</p>
+
+<p>Fictional banking website demonstration only. Not a real bank.</p>
+
+</footer>
 
 <script>
 
@@ -142,7 +150,9 @@ document.getElementById("transferForm").addEventListener("submit",function(event
 
 event.preventDefault();
 
-document.getElementById("result").style.display="block";
+document.getElementById("transferWarning").style.display="block";
+
+document.getElementById("transferWarning").scrollIntoView({behavior:"smooth",block:"center"});
 
 });
 
