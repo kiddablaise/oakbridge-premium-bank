@@ -1,357 +1,244 @@
 
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Transfers | Oakbridge Financial Bank</title>
 
 <style>
-
 * {
-
   box-sizing: border-box;
-
   margin: 0;
-
   padding: 0;
-
 }
 
 body {
-
   font-family: Arial, sans-serif;
-
   background: #f4f6fa;
-
   color: #17243b;
-
 }
 
 header {
-
   background: #071b3a;
-
   color: white;
-
   padding: 22px 7%;
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
   flex-wrap: wrap;
-
   gap: 15px;
-
 }
 
 .logo {
-
   font-size: 21px;
-
   font-weight: bold;
-
   color: #e5bd62;
-
 }
 
 nav a {
-
   color: white;
-
   text-decoration: none;
-
   margin-left: 16px;
-
   font-size: 14px;
-
 }
 
 .container {
-
   max-width: 850px;
-
   margin: 55px auto;
-
   padding: 0 20px;
-
 }
 
 .card {
-
   background: white;
-
   padding: 35px;
-
   border-radius: 14px;
-
   box-shadow: 0 8px 30px rgba(0,0,0,0.07);
-
 }
 
 h1 {
-
   color: #071b3a;
-
   margin-bottom: 10px;
-
 }
 
 .subtitle {
-
   color: #68758a;
-
   margin-bottom: 30px;
-
   line-height: 1.6;
-
 }
 
 label {
-
   display: block;
-
   font-weight: bold;
-
   margin: 18px 0 8px;
-
   font-size: 14px;
-
 }
 
-input, select {
-
+input {
   width: 100%;
-
   padding: 14px;
-
   border: 1px solid #d8deea;
-
   border-radius: 7px;
-
   font-size: 15px;
-
   background: white;
-
 }
 
-input:focus, select:focus {
-
+input:focus {
   outline: 2px solid #d6ae50;
-
   border-color: #d6ae50;
-
 }
 
 .notice {
-
   margin-top: 24px;
-
   padding: 14px;
-
   background: #f8f5ed;
-
   border-left: 4px solid #c9a34c;
-
   color: #34425a;
-
   font-size: 14px;
-
   line-height: 1.5;
-
 }
 
 button {
-
   width: 100%;
-
   margin-top: 22px;
-
   padding: 15px;
-
   border: none;
-
   border-radius: 7px;
-
   background: #c9a34c;
-
   color: #071b3a;
-
   font-size: 16px;
-
   font-weight: bold;
-
   cursor: pointer;
-
 }
 
 button:hover {
-
   background: #dfbd70;
-
 }
 
 #result {
-
-  margin-top: 15px;
-
-  color: #34425a;
-
+  display: none;
+  margin-top: 22px;
+  padding: 20px;
+  border: 1px solid #e4b8b8;
+  border-left: 5px solid #c74646;
+  border-radius: 8px;
+  background: #fff5f5;
+  color: #762d2d;
+  line-height: 1.7;
   font-size: 14px;
+}
 
+#result strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+#result a {
+  color: #071b3a;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 footer {
-
   text-align: center;
-
   padding: 25px;
-
   color: #718096;
-
   font-size: 13px;
-
 }
 
 @media(max-width:600px) {
-
   header {
-
     padding: 20px;
-
   }
 
   nav a {
-
     margin: 0 10px 0 0;
-
     display: inline-block;
-
     padding-top: 8px;
-
   }
 
   .card {
-
     padding: 23px;
-
   }
-
 }
-
 </style>
-
 </head>
 
 <body>
 
 <header>
-
   <div class="logo">OAKBRIDGE</div>
-
   <nav>
-
     <a href="index.html">Home</a>
-
     <a href="dashboard.html">Dashboard</a>
-
     <a href="transfers.html">Transfers</a>
-
     <a href="statements.html">Statements</a>
-
     <a href="profile.html">Profile</a>
-
   </nav>
-
 </header>
 
 <main class="container">
-
   <section class="card">
-
     <h1>Transfers</h1>
-
     <p class="subtitle">
-
       Enter the details below to review transfer information.
-
     </p>
 
     <form id="transferForm">
 
       <label for="recipient">Recipient Name</label>
-
       <input id="recipient" type="text"
-
         placeholder="Enter recipient name" required>
 
       <label for="bank">Receiving Bank</label>
-
       <input id="bank" type="text"
-
         placeholder="Enter bank name" required>
 
       <label for="account">Account Number</label>
-
       <input id="account" type="text"
-
         inputmode="numeric" maxlength="20"
-
         placeholder="Enter account number" required>
 
       <label for="amount">Transfer Amount (USD)</label>
-
       <input id="amount" type="number"
-
         min="1" step="0.01"
-
         placeholder="Enter amount" required>
 
       <div class="notice">
-
         This page provides transfer information only.
-
       </div>
 
       <button type="submit">Submit</button>
 
-      <p id="result" aria-live="polite"></p>
+      <div id="result" role="alert" aria-live="assertive">
+        <strong>⚠ Transfer Failed</strong>
+        We were unable to process your transfer.
+        <br>
+        Please contact customer support for assistance.
+        <br><br>
+        <a href="mailto:oakbridgefinancialbank.org@gmail.com">
+          oakbridgefinancialbank.org@gmail.com
+        </a>
+      </div>
 
     </form>
-
   </section>
-
 </main>
 
 <footer>
-
   © 2026 Oakbridge Financial Bank
-
 </footer>
 
 <script>
-
 document.getElementById("transferForm").addEventListener("submit", function(event) {
-
   event.preventDefault();
 
-  document.getElementById("result").textContent =
-
-    "This page provides transfer information only.";
-
+  const result = document.getElementById("result");
+  result.style.display = "block";
+  result.scrollIntoView({ behavior: "smooth", block: "center" });
 });
-
 </script>
 
 </body>
-
 </html>
