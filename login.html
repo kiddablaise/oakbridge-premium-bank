@@ -4,55 +4,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oakbridge Financial Bank | Login</title>
+<title>Oakbridge Financial Bank | Sign In</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#f2f4f8;font-family:Arial,sans-serif;color:#17243b;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
-.login-box{background:white;width:100%;max-width:420px;padding:35px 28px;border-radius:14px;box-shadow:0 8px 30px #10204018}
-.brand{text-align:center;color:#09234a;font-size:22px;font-weight:bold;letter-spacing:1px}
-.gold{text-align:center;color:#bd963e;font-size:12px;margin:8px 0 28px}
-h1{text-align:center;font-size:23px;margin-bottom:8px}
-.subtitle{text-align:center;color:#718096;font-size:13px;margin-bottom:28px}
-label{display:block;font-size:13px;font-weight:bold;margin:16px 0 8px}
-input{width:100%;padding:14px;border:1px solid #dce2eb;border-radius:7px;font-size:15px}
-button{width:100%;padding:14px;background:#09234a;color:white;border:0;border-radius:7px;font-size:15px;font-weight:bold;margin-top:22px}
-#error{color:#c03939;text-align:center;font-size:13px;margin-top:15px}
-.notice{background:#fff8e8;color:#705a29;padding:12px;border-radius:7px;font-size:11px;line-height:1.6;margin-top:22px}
-footer{text-align:center;color:#8792a3;font-size:11px;margin-top:24px}
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#06152e,#17365f);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;color:#17243b}
+.login-card{width:100%;max-width:430px;background:#fff;border-radius:15px;padding:38px 30px;box-shadow:0 15px 45px #0005}
+.brand{text-align:center;color:#09234a;font-size:23px;font-weight:bold;letter-spacing:1.5px}
+.gold-line{width:55px;height:3px;background:#c49a42;margin:13px auto 27px}
+h1{text-align:center;font-size:25px;margin-bottom:8px;color:#09234a}
+.subtitle{text-align:center;color:#778399;font-size:13px;margin-bottom:30px}
+label{display:block;font-size:13px;font-weight:bold;margin:17px 0 8px}
+.field{width:100%;padding:14px;border:1px solid #dce2eb;border-radius:7px;font-size:14px;outline:none}
+.field:focus{border-color:#b99140}
+.password-wrap{position:relative}
+.password-wrap input{padding-right:75px}
+.show{position:absolute;right:12px;top:50%;transform:translateY(-50%);border:0;background:none;color:#09234a;font-weight:bold;cursor:pointer}
+.options{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-size:12px;gap:10px}
+.remember{display:flex;align-items:center;gap:7px;color:#59677c;margin:0}
+.options a{color:#09234a;text-decoration:none;font-weight:bold}
+.signin{width:100%;padding:15px;background:#09234a;color:white;border:0;border-radius:7px;font-size:15px;font-weight:bold;margin-top:25px;cursor:pointer}
+.signin:hover{background:#123b70}
+#error{text-align:center;color:#c03939;font-size:13px;margin-top:15px}
+footer{text-align:center;font-size:11px;color:#8a95a6;margin-top:25px}
 </style>
 </head>
 <body>
-<div class="login-box">
+<div class="login-card">
 <div class="brand">OAKBRIDGE</div>
-<div class="gold">FINANCIAL BANK</div>
+<div class="gold-line"></div>
 
 <h1>Welcome Back</h1>
-<p class="subtitle">Sign in to access your banking dashboard.</p>
+<p class="subtitle">Sign in to continue to your account.</p>
 
 <form id="loginForm">
 <label for="username">Username</label>
-<input id="username" type="text" placeholder="Enter your username" required>
+<input class="field" id="username" type="text" placeholder="Enter your username" autocomplete="off" required>
 
 <label for="password">Password</label>
-<input id="password" type="password" placeholder="Enter your password" required>
+<div class="password-wrap">
+<input class="field" id="password" type="password" placeholder="Enter your password" required>
+<button class="show" type="button" id="togglePassword">Show</button>
+</div>
 
-<button type="submit">Sign In</button>
+<div class="options">
+<label class="remember"><input type="checkbox"> Remember me</label>
+<a href="contact.html">Forgot Password?</a>
+</div>
+
+<button class="signin" type="submit">Sign In</button>
 <p id="error"></p>
 </form>
-
-<div class="notice">
-<strong>Fictional demonstration only.</strong> This public website uses a visible, insecure demo login. Never enter real banking credentials or personal financial information.
-</div>
 
 <footer>© 2026 Oakbridge Financial Bank</footer>
 </div>
 
 <script>
+const passwordField=document.getElementById("password");
+
+document.getElementById("togglePassword").addEventListener("click",function(){
+const showing=passwordField.type==="text";
+passwordField.type=showing?"password":"text";
+this.textContent=showing?"Show":"Hide";
+});
+
 document.getElementById("loginForm").addEventListener("submit",function(event){
 event.preventDefault();
 
 const username=document.getElementById("username").value;
-const password=document.getElementById("password").value;
+const password=passwordField.value;
 const error=document.getElementById("error");
 
 if(username==="Gretchel22" && password==="King22"){
