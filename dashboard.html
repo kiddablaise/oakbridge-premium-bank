@@ -16,45 +16,71 @@
 
 *{box-sizing:border-box}
 
-body{margin:0;font-family:Arial,sans-serif;background:#f4f6fa;color:#17243b}
+body{margin:0;font-family:Arial,sans-serif;background:#f3f5f9;color:#17243b}
 
-header{background:#071b35;color:white;padding:20px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+header{background:#071b35;padding:20px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
 
-header h2{color:#d6b45d;margin:0}
+.logo{color:#d6b45d;font-size:22px;font-weight:bold;letter-spacing:2px}
 
-nav{display:flex;gap:16px;flex-wrap:wrap}
+nav{display:flex;gap:17px;flex-wrap:wrap}
 
-nav a{color:white;text-decoration:none;font-size:14px}
+nav a{color:white;text-decoration:none;font-size:13px}
 
 nav a:hover{color:#d6b45d}
 
-main{max-width:1050px;margin:35px auto;padding:20px}
+main{max-width:1150px;margin:35px auto;padding:20px}
 
-.welcome{margin-bottom:25px}
+.welcome{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px;margin-bottom:28px}
 
-.welcome h1{margin-bottom:5px;color:#071b35}
+.welcome h1{color:#071b35;margin-bottom:8px}
 
-.balance{background:linear-gradient(120deg,#071b35,#173b60);color:white;padding:30px;border-radius:15px;margin-bottom:25px}
+.welcome p{color:#718096}
 
-.balance small{color:#d6b45d}
+.demo-tag{background:#fff1cc;color:#85651d;padding:9px 13px;border-radius:20px;font-size:12px;font-weight:bold}
 
-.balance h2{font-size:35px;margin:12px 0}
+.balance{background:linear-gradient(120deg,#071b35,#1b4268);color:white;padding:32px;border-radius:16px;margin-bottom:25px;box-shadow:0 8px 25px #071b3520}
 
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:15px;margin-bottom:30px}
+.balance small{color:#d6b45d;letter-spacing:1.5px}
 
-.card{background:white;padding:23px;border-radius:12px;box-shadow:0 4px 15px #10213b10}
+.balance h2{font-size:38px;margin:15px 0}
 
-.card a{color:#9b7727;text-decoration:none;font-weight:bold}
+.balance p{color:#d9e2ed;font-size:13px}
 
-table{width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-bottom:28px}
 
-th,td{padding:15px;text-align:left;border-bottom:1px solid #eee;font-size:14px}
+.card{background:white;padding:23px;border-radius:13px;box-shadow:0 4px 15px #071b3510}
 
-th{background:#071b35;color:white}
+.card h3{color:#071b35;margin-top:0}
 
-.notice{margin-top:25px;background:#fff6df;padding:15px;border-radius:8px;font-size:13px;color:#745719}
+.card p{color:#718096;font-size:13px;line-height:1.7}
 
-footer{text-align:center;padding:25px;color:#777;font-size:13px}
+.card a{display:inline-block;margin-top:12px;color:#a27d2e;text-decoration:none;font-weight:bold;font-size:13px}
+
+.amount{font-size:23px;font-weight:bold;color:#071b35;margin:12px 0}
+
+.section{background:white;padding:25px;border-radius:13px;box-shadow:0 4px 15px #071b3510;margin-bottom:25px;overflow-x:auto}
+
+.section h2{color:#071b35;margin-top:0}
+
+table{width:100%;border-collapse:collapse;min-width:480px}
+
+th,td{text-align:left;padding:16px 12px;border-bottom:1px solid #edf0f4;font-size:13px}
+
+th{color:#718096;font-size:12px}
+
+.credit{color:#198754;font-weight:bold}
+
+.debit{color:#b33a3a;font-weight:bold}
+
+.actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+
+.action{display:block;text-align:center;background:#f5f7fa;padding:20px 10px;border-radius:10px;color:#071b35;text-decoration:none;font-weight:bold;font-size:13px}
+
+.action:hover{background:#fff1cc}
+
+.notice{background:#fff6df;padding:16px;border-radius:9px;color:#745719;font-size:13px;line-height:1.7}
+
+footer{text-align:center;padding:28px;color:#788397;font-size:12px}
 
 </style>
 
@@ -64,7 +90,7 @@ footer{text-align:center;padding:25px;color:#777;font-size:13px}
 
 <header>
 
-<h2>OAKBRIDGE</h2>
+<div class="logo">OAKBRIDGE</div>
 
 <nav>
 
@@ -88,19 +114,27 @@ footer{text-align:center;padding:25px;color:#777;font-size:13px}
 
 <div class="welcome">
 
-<h1>Welcome, Alex</h1>
+<div>
 
-<p>Your Oakbridge demonstration dashboard</p>
+<h1>Good Day, Alex!</h1>
+
+<p>Welcome to your Oakbridge digital banking dashboard.</p>
+
+</div>
+
+<span class="demo-tag">DEMO CUSTOMER</span>
 
 </div>
 
 <div class="balance">
 
-<small>DEMO AVAILABLE BALANCE</small>
+<small>YOUR DEMONSTRATION ACCOUNT BALANCE</small>
 
 <h2>$25,480.00</h2>
 
-<p>Account ending in 2048 (DEMO)</p>
+<p>Sample Account Number: DEMO-2048</p>
+
+<p>Premium Personal Banking</p>
 
 </div>
 
@@ -108,59 +142,127 @@ footer{text-align:center;padding:25px;color:#777;font-size:13px}
 
 <div class="card">
 
-<h3>Personal Banking</h3>
+<h3>Total Balance</h3>
 
-<p>View your sample banking overview.</p>
+<div class="amount">$25,480.00</div>
 
-<a href="profile.html">View Profile →</a>
-
-</div>
-
-<div class="card">
-
-<h3>Transfers</h3>
-
-<p>Explore the sample transfer form.</p>
-
-<a href="transfers.html">Make a Demo Transfer →</a>
+<p>Sample account balance</p>
 
 </div>
 
 <div class="card">
 
-<h3>Statements</h3>
+<h3>Recent Credits</h3>
 
-<p>Review your sample account statement.</p>
+<div class="amount">$4,500.00</div>
 
-<a href="statements.html">View Statements →</a>
+<p>Sample incoming transactions</p>
+
+</div>
+
+<div class="card">
+
+<h3>Recent Debits</h3>
+
+<div class="amount">$370.00</div>
+
+<p>Sample outgoing transactions</p>
 
 </div>
 
 </div>
+
+<div class="section">
+
+<h2>Quick Banking Actions</h2>
+
+<div class="actions">
+
+<a class="action" href="transfers.html">Transfer Preview</a>
+
+<a class="action" href="statements.html">View Statements</a>
+
+<a class="action" href="profile.html">My Profile</a>
+
+<a class="action" href="index.html">Home Page</a>
+
+</div>
+
+</div>
+
+<div class="section">
 
 <h2>Recent Transactions</h2>
 
 <table>
 
-<tr><th>Description</th><th>Date</th><th>Amount</th></tr>
+<tr>
 
-<tr><td>Salary Credit (DEMO)</td><td>Nov 15, 2026</td><td>+$4,500.00</td></tr>
+<th>Description</th>
 
-<tr><td>Shopping (DEMO)</td><td>Nov 12, 2026</td><td>-$250.00</td></tr>
+<th>Date</th>
 
-<tr><td>Utility Bill (DEMO)</td><td>Nov 10, 2026</td><td>-$120.00</td></tr>
+<th>Reference</th>
+
+<th>Amount</th>
+
+</tr>
+
+<tr>
+
+<td>Salary Credit (DEMO)</td>
+
+<td>Nov 15, 2026</td>
+
+<td>DEMO001</td>
+
+<td class="credit">+$4,500.00</td>
+
+</tr>
+
+<tr>
+
+<td>Shopping (DEMO)</td>
+
+<td>Nov 12, 2026</td>
+
+<td>DEMO002</td>
+
+<td class="debit">-$250.00</td>
+
+</tr>
+
+<tr>
+
+<td>Utility Bill (DEMO)</td>
+
+<td>Nov 10, 2026</td>
+
+<td>DEMO003</td>
+
+<td class="debit">-$120.00</td>
+
+</tr>
 
 </table>
 
+</div>
+
 <div class="notice">
 
-<strong>Fictional demonstration only.</strong> All balances and transactions are sample data. No real accounts, payments or banking services are provided.
+<strong>Important demonstration notice:</strong> Oakbridge Financial Bank is a fictional website project. All account balances, transactions and customer information are sample data. No real accounts, deposits, withdrawals or transfers are available.
 
 </div>
 
 </main>
 
-<footer>© 2026 Oakbridge Financial Bank — Fictional Demo</footer>
+<footer>
+
+OAKBRIDGE FINANCIAL BANK<br>
+
+© 2026 — Fictional Banking Website Demonstration
+
+</footer>
 
 </body>
 
