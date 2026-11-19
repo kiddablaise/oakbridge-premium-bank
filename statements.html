@@ -10,127 +10,51 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Oakbridge | Statements Demo</title>
+<title>Statements | Oakbridge Financial Bank</title>
 
 <style>
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+*{box-sizing:border-box}
 
-body {
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6fa;color:#17243b}
 
-  font-family: Arial, sans-serif;
+header{background:#071b35;padding:20px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
 
-  background: #f3f5f8;
+.logo{color:#d6b45d;font-size:22px;font-weight:bold}
 
-  color: #14243a;
+nav{display:flex;gap:16px;flex-wrap:wrap}
 
-}
+nav a{color:white;text-decoration:none;font-size:14px}
 
-header {
+nav a:hover{color:#d6b45d}
 
-  background: #071b33;
+main{max-width:1000px;margin:40px auto;padding:20px}
 
-  color: white;
+.card{background:white;padding:28px;border-radius:14px;box-shadow:0 5px 25px #10213b12;margin-bottom:22px}
 
-  padding: 22px 7%;
+h1,h2{color:#071b35}
 
-  display: flex;
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px}
 
-  justify-content: space-between;
+.summary div{background:#f5f7fa;padding:18px;border-radius:9px}
 
-  align-items: center;
+.summary small{color:#68758a}
 
-}
+.summary h2{margin:10px 0}
 
-.logo { font-size: 20px; font-weight: bold; }
+table{width:100%;border-collapse:collapse;margin-top:20px}
 
-.logo span { color: #d6b46a; }
+th,td{text-align:left;padding:15px;border-bottom:1px solid #e7eaf0;font-size:14px}
 
-header a { color: #d6b46a; text-decoration: none; }
+th{background:#071b35;color:white}
 
-.container {
+.credit{color:#198754;font-weight:bold}
 
-  max-width: 1000px;
+.debit{color:#b33a3a;font-weight:bold}
 
-  margin: 40px auto;
+.notice{background:#fff6df;padding:15px;border-radius:8px;color:#745719;font-size:13px;line-height:1.7;margin-top:22px}
 
-  padding: 20px;
-
-}
-
-.notice {
-
-  background: #fff3d8;
-
-  color: #75551b;
-
-  padding: 14px;
-
-  border-radius: 7px;
-
-  font-size: 13px;
-
-  line-height: 1.6;
-
-  margin-bottom: 22px;
-
-}
-
-.panel {
-
-  background: white;
-
-  padding: 25px;
-
-  border-radius: 12px;
-
-  overflow-x: auto;
-
-}
-
-h1 { margin-bottom: 10px; }
-
-.subtitle { color: #748195; margin-bottom: 25px; }
-
-table {
-
-  width: 100%;
-
-  min-width: 550px;
-
-  border-collapse: collapse;
-
-}
-
-th, td {
-
-  text-align: left;
-
-  padding: 17px 12px;
-
-  border-bottom: 1px solid #e9edf2;
-
-  font-size: 14px;
-
-}
-
-th { color: #748195; }
-
-.credit { color: #188653; }
-
-.debit { color: #bc5151; }
-
-footer {
-
-  text-align: center;
-
-  color: #748195;
-
-  padding: 25px;
-
-  font-size: 12px;
-
-}
+footer{text-align:center;color:#777;padding:25px;font-size:13px}
 
 </style>
 
@@ -140,115 +64,85 @@ footer {
 
 <header>
 
-  <div class="logo">OAKBRIDGE <span>FINANCIAL</span></div>
+<div class="logo">OAKBRIDGE</div>
 
-  <a href="dashboard.html">Dashboard</a>
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="dashboard.html">Dashboard</a>
+
+<a href="transfers.html">Transfers</a>
+
+<a href="statements.html">Statements</a>
+
+<a href="profile.html">Profile</a>
+
+</nav>
 
 </header>
 
-<main class="container">
+<main>
 
-  <div class="notice">
+<div class="card">
 
-    SAMPLE STATEMENT ONLY. These are fictional
+<h1>Account Statement</h1>
 
-    transactions and do not represent real money
+<p>Sample monthly account statement</p>
 
-    or a real bank account.
+<p><strong>Customer:</strong> Alex Morgan (DEMO)</p>
 
-  </div>
+<p><strong>Account:</strong> DEMO-2048</p>
 
-  <section class="panel">
+<p><strong>Statement Period:</strong> November 1 – November 30, 2026</p>
 
-    <h1>Account Statement</h1>
+</div>
 
-    <p class="subtitle">
+<div class="card">
 
-      Sample account activity • November 2026
+<h2>Account Overview</h2>
 
-    </p>
+<div class="summary">
 
-    <table>
+<div><small>Opening Balance</small><h2>$21,350.00</h2></div>
 
-      <thead>
+<div><small>Total Credits</small><h2>$4,500.00</h2></div>
 
-        <tr>
+<div><small>Total Debits</small><h2>$370.00</h2></div>
 
-          <th>Date</th>
+<div><small>Closing Balance</small><h2>$25,480.00</h2></div>
 
-          <th>Description</th>
+</div>
 
-          <th>Reference</th>
+</div>
 
-          <th>Amount</th>
+<div class="card">
 
-        </tr>
+<h2>Transaction History</h2>
 
-      </thead>
+<table>
 
-      <tbody>
+<tr><th>Date</th><th>Description</th><th>Reference</th><th>Amount</th></tr>
 
-        <tr>
+<tr><td>Nov 15</td><td>Salary Credit (DEMO)</td><td>DEMO001</td><td class="credit">+$4,500.00</td></tr>
 
-          <td>Nov 15, 2026</td>
+<tr><td>Nov 12</td><td>Shopping (DEMO)</td><td>DEMO002</td><td class="debit">-$250.00</td></tr>
 
-          <td>Sample Deposit</td>
+<tr><td>Nov 10</td><td>Utility Bill (DEMO)</td><td>DEMO003</td><td class="debit">-$120.00</td></tr>
 
-          <td>DEMO001</td>
+</table>
 
-          <td class="credit">+$2,500.00</td>
+<div class="notice">
 
-        </tr>
+<strong>Fictional demonstration statement.</strong> All balances, dates, account numbers and transactions are sample information. This is not an official bank statement.
 
-        <tr>
+</div>
 
-          <td>Nov 12, 2026</td>
-
-          <td>Sample Shopping</td>
-
-          <td>DEMO002</td>
-
-          <td class="debit">-$150.00</td>
-
-        </tr>
-
-        <tr>
-
-          <td>Nov 10, 2026</td>
-
-          <td>Sample Payment</td>
-
-          <td>DEMO003</td>
-
-          <td class="debit">-$75.00</td>
-
-        </tr>
-
-        <tr>
-
-          <td>Nov 05, 2026</td>
-
-          <td>Sample Deposit</td>
-
-          <td>DEMO004</td>
-
-          <td class="credit">+$1,200.00</td>
-
-        </tr>
-
-      </tbody>
-
-    </table>
-
-  </section>
+</div>
 
 </main>
 
-<footer>
-
-  Oakbridge Financial Bank — Fictional demonstration only.
-
-</footer>
+<footer>© 2026 Oakbridge Financial Bank — Fictional Demo</footer>
 
 </body>
 
