@@ -1,0 +1,281 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Oakbridge | Transfers Demo</title>
+
+<style>
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+
+  font-family: Arial, sans-serif;
+
+  background: #f3f5f8;
+
+  color: #14243a;
+
+}
+
+header {
+
+  background: #071b33;
+
+  color: white;
+
+  padding: 22px 7%;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+.logo { font-weight: bold; font-size: 20px; }
+
+.logo span { color: #d6b46a; }
+
+header a { color: #d6b46a; text-decoration: none; }
+
+.container {
+
+  max-width: 650px;
+
+  margin: 45px auto;
+
+  padding: 20px;
+
+}
+
+.notice {
+
+  background: #fff3d8;
+
+  color: #75551b;
+
+  padding: 14px;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  margin-bottom: 22px;
+
+}
+
+.panel {
+
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 12px;
+
+  box-shadow: 0 5px 20px rgba(0,0,0,.05);
+
+}
+
+h1 { margin-bottom: 10px; }
+
+.subtitle { color: #748195; margin-bottom: 25px; line-height: 1.6; }
+
+label {
+
+  display: block;
+
+  margin: 18px 0 8px;
+
+  font-weight: bold;
+
+  font-size: 14px;
+
+}
+
+input, select {
+
+  width: 100%;
+
+  padding: 14px;
+
+  border: 1px solid #dce2e9;
+
+  border-radius: 6px;
+
+  font-size: 15px;
+
+}
+
+button {
+
+  width: 100%;
+
+  background: #c9a45b;
+
+  color: #071b33;
+
+  border: none;
+
+  padding: 15px;
+
+  border-radius: 6px;
+
+  font-weight: bold;
+
+  font-size: 15px;
+
+  margin-top: 25px;
+
+  cursor: pointer;
+
+}
+
+#message {
+
+  margin-top: 18px;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+}
+
+.back {
+
+  display: inline-block;
+
+  margin-top: 20px;
+
+  color: #17476e;
+
+  text-decoration: none;
+
+}
+
+footer {
+
+  text-align: center;
+
+  color: #748195;
+
+  padding: 25px;
+
+  font-size: 12px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">OAKBRIDGE <span>FINANCIAL</span></div>
+
+  <a href="dashboard.html">Dashboard</a>
+
+</header>
+
+<main class="container">
+
+  <div class="notice">
+
+    DEMONSTRATION ONLY. No real transfers can be
+
+    made through this website. Do not enter real
+
+    banking information.
+
+  </div>
+
+  <section class="panel">
+
+    <h1>Transfers</h1>
+
+    <p class="subtitle">
+
+      Explore the Oakbridge sample transfer experience.
+
+    </p>
+
+    <form id="transferForm">
+
+      <label for="recipient">Sample Recipient Name</label>
+
+      <input id="recipient" type="text"
+
+        placeholder="Enter a fictional name" required>
+
+      <label for="bank">Destination Bank</label>
+
+      <select id="bank">
+
+        <option>Sample Bank A</option>
+
+        <option>Sample Bank B</option>
+
+        <option>Sample Bank C</option>
+
+      </select>
+
+      <label for="amount">Sample Amount</label>
+
+      <input id="amount" type="number"
+
+        placeholder="Enter sample amount"
+
+        min="1" max="100000" required>
+
+      <button type="submit">Preview Demo Transfer</button>
+
+    </form>
+
+    <p id="message"></p>
+
+    <a class="back" href="dashboard.html">
+
+      ← Return to Dashboard
+
+    </a>
+
+  </section>
+
+</main>
+
+<footer>
+
+  Oakbridge Financial Bank — Fictional demonstration only.
+
+</footer>
+
+<script>
+
+document.getElementById("transferForm").addEventListener("submit", function(event) {
+
+  event.preventDefault();
+
+  document.getElementById("message").textContent =
+
+    "Demo preview only. No money has been sent, and no transfer has taken place.";
+
+});
+
+</script>
+
+</body>
+
+</html>
