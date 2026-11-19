@@ -10,171 +10,45 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Oakbridge | Transfers Demo</title>
+<title>Transfers | Oakbridge Financial Bank</title>
 
 <style>
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+*{box-sizing:border-box}
 
-body {
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6fa;color:#17243b}
 
-  font-family: Arial, sans-serif;
+header{background:#071b35;padding:20px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
 
-  background: #f3f5f8;
+.logo{color:#d6b45d;font-size:22px;font-weight:bold}
 
-  color: #14243a;
+nav{display:flex;gap:16px;flex-wrap:wrap}
 
-}
+nav a{color:white;text-decoration:none;font-size:14px}
 
-header {
+nav a:hover{color:#d6b45d}
 
-  background: #071b33;
+main{max-width:760px;margin:45px auto;padding:20px}
 
-  color: white;
+.card{background:white;padding:30px;border-radius:14px;box-shadow:0 5px 25px #10213b12}
 
-  padding: 22px 7%;
+h1{color:#071b35;margin-top:0}
 
-  display: flex;
+.subtitle{color:#68758a;line-height:1.6}
 
-  justify-content: space-between;
+label{display:block;margin:20px 0 8px;font-size:14px;font-weight:bold}
 
-  align-items: center;
+input,select{width:100%;padding:14px;border:1px solid #dce1e8;border-radius:7px;font-size:15px;background:white}
 
-}
+button{width:100%;padding:15px;background:#b18b35;color:white;border:0;border-radius:7px;font-size:16px;font-weight:bold;margin-top:25px}
 
-.logo { font-weight: bold; font-size: 20px; }
+button:active{opacity:.8}
 
-.logo span { color: #d6b46a; }
+.notice{background:#fff6df;padding:15px;border-radius:8px;color:#745719;font-size:13px;line-height:1.7;margin-top:22px}
 
-header a { color: #d6b46a; text-decoration: none; }
+#result{display:none;background:#edf5ed;padding:15px;margin-top:20px;border-radius:8px;color:#245b32;line-height:1.6}
 
-.container {
-
-  max-width: 650px;
-
-  margin: 45px auto;
-
-  padding: 20px;
-
-}
-
-.notice {
-
-  background: #fff3d8;
-
-  color: #75551b;
-
-  padding: 14px;
-
-  border-radius: 7px;
-
-  font-size: 13px;
-
-  line-height: 1.6;
-
-  margin-bottom: 22px;
-
-}
-
-.panel {
-
-  background: white;
-
-  padding: 30px;
-
-  border-radius: 12px;
-
-  box-shadow: 0 5px 20px rgba(0,0,0,.05);
-
-}
-
-h1 { margin-bottom: 10px; }
-
-.subtitle { color: #748195; margin-bottom: 25px; line-height: 1.6; }
-
-label {
-
-  display: block;
-
-  margin: 18px 0 8px;
-
-  font-weight: bold;
-
-  font-size: 14px;
-
-}
-
-input, select {
-
-  width: 100%;
-
-  padding: 14px;
-
-  border: 1px solid #dce2e9;
-
-  border-radius: 6px;
-
-  font-size: 15px;
-
-}
-
-button {
-
-  width: 100%;
-
-  background: #c9a45b;
-
-  color: #071b33;
-
-  border: none;
-
-  padding: 15px;
-
-  border-radius: 6px;
-
-  font-weight: bold;
-
-  font-size: 15px;
-
-  margin-top: 25px;
-
-  cursor: pointer;
-
-}
-
-#message {
-
-  margin-top: 18px;
-
-  font-size: 14px;
-
-  line-height: 1.6;
-
-}
-
-.back {
-
-  display: inline-block;
-
-  margin-top: 20px;
-
-  color: #17476e;
-
-  text-decoration: none;
-
-}
-
-footer {
-
-  text-align: center;
-
-  color: #748195;
-
-  padding: 25px;
-
-  font-size: 12px;
-
-}
+footer{text-align:center;color:#777;padding:25px;font-size:13px}
 
 </style>
 
@@ -184,93 +58,91 @@ footer {
 
 <header>
 
-  <div class="logo">OAKBRIDGE <span>FINANCIAL</span></div>
+<div class="logo">OAKBRIDGE</div>
 
-  <a href="dashboard.html">Dashboard</a>
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="dashboard.html">Dashboard</a>
+
+<a href="transfers.html">Transfers</a>
+
+<a href="statements.html">Statements</a>
+
+<a href="profile.html">Profile</a>
+
+</nav>
 
 </header>
 
-<main class="container">
+<main>
 
-  <div class="notice">
+<div class="card">
 
-    DEMONSTRATION ONLY. No real transfers can be
+<h1>Demo Transfer</h1>
 
-    made through this website. Do not enter real
+<p class="subtitle">Explore the Oakbridge sample transfer interface.</p>
 
-    banking information.
+<form id="transferForm">
 
-  </div>
+<label for="recipient">Recipient Name</label>
 
-  <section class="panel">
+<input id="recipient" type="text" placeholder="Sample recipient name" required>
 
-    <h1>Transfers</h1>
+<label for="bank">Receiving Bank</label>
 
-    <p class="subtitle">
+<select id="bank" required>
 
-      Explore the Oakbridge sample transfer experience.
+<option value="">Select sample bank</option>
 
-    </p>
+<option>Oakbridge Demo Bank</option>
 
-    <form id="transferForm">
+<option>Sample National Bank</option>
 
-      <label for="recipient">Sample Recipient Name</label>
+<option>Example Trust Bank</option>
 
-      <input id="recipient" type="text"
+</select>
 
-        placeholder="Enter a fictional name" required>
+<label for="account">Sample Account Number</label>
 
-      <label for="bank">Destination Bank</label>
+<input id="account" type="text" placeholder="Enter sample number" required>
 
-      <select id="bank">
+<label for="amount">Transfer Amount</label>
 
-        <option>Sample Bank A</option>
+<input id="amount" type="number" min="1" step="0.01" placeholder="Enter sample amount" required>
 
-        <option>Sample Bank B</option>
+<button type="submit">Preview Demo Transfer</button>
 
-        <option>Sample Bank C</option>
+</form>
 
-      </select>
+<div id="result">
 
-      <label for="amount">Sample Amount</label>
+<strong>Demo preview only.</strong><br>
 
-      <input id="amount" type="number"
+No money has been sent, and no transfer has taken place.
 
-        placeholder="Enter sample amount"
+</div>
 
-        min="1" max="100000" required>
+<div class="notice">
 
-      <button type="submit">Preview Demo Transfer</button>
+<strong>Important:</strong> This is a fictional banking demonstration. Do not enter real bank account information. No payments or transfers are processed.
 
-    </form>
+</div>
 
-    <p id="message"></p>
-
-    <a class="back" href="dashboard.html">
-
-      ← Return to Dashboard
-
-    </a>
-
-  </section>
+</div>
 
 </main>
 
-<footer>
-
-  Oakbridge Financial Bank — Fictional demonstration only.
-
-</footer>
+<footer>© 2026 Oakbridge Financial Bank — Fictional Demo</footer>
 
 <script>
 
-document.getElementById("transferForm").addEventListener("submit", function(event) {
+document.getElementById("transferForm").addEventListener("submit",function(event){
 
-  event.preventDefault();
+event.preventDefault();
 
-  document.getElementById("message").textContent =
-
-    "Demo preview only. No money has been sent, and no transfer has taken place.";
+document.getElementById("result").style.display="block";
 
 });
 
