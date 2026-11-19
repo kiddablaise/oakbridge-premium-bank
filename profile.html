@@ -18,23 +18,33 @@
 
 body{margin:0;font-family:Arial,sans-serif;background:#f4f6fa;color:#17243b}
 
-header{background:#071b35;color:white;padding:22px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+header{background:#071b35;padding:20px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
 
-header h2{margin:0;color:#d6b45d}
+.logo{color:#d6b45d;font-size:22px;font-weight:bold}
 
-header a{color:white;text-decoration:none}
+nav{display:flex;gap:16px;flex-wrap:wrap}
 
-main{max-width:760px;margin:45px auto;padding:20px}
+nav a{color:white;text-decoration:none;font-size:14px}
 
-.card{background:white;padding:30px;border-radius:15px;box-shadow:0 5px 25px #10213b12}
+nav a:hover{color:#d6b45d}
 
-h1{color:#071b35;margin-top:0}
+main{max-width:850px;margin:40px auto;padding:20px}
 
-.label{color:#777;font-size:13px;margin-bottom:5px}
+.card{background:white;padding:30px;border-radius:14px;box-shadow:0 5px 25px #10213b12;margin-bottom:22px}
 
-.value{font-weight:bold;margin-bottom:22px}
+h1,h2{color:#071b35}
 
-.notice{background:#fff6df;padding:15px;border-radius:8px;color:#745719;font-size:13px;line-height:1.6}
+.avatar{width:75px;height:75px;background:#071b35;color:#d6b45d;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:27px;font-weight:bold;margin-bottom:18px}
+
+.profile-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px;margin-top:25px}
+
+.label{font-size:12px;color:#788397;margin-bottom:7px}
+
+.value{font-size:16px;font-weight:bold;color:#17243b}
+
+.status{display:inline-block;background:#fff2cf;color:#84631c;padding:7px 12px;border-radius:20px;font-size:12px;font-weight:bold}
+
+.notice{background:#fff6df;padding:15px;border-radius:8px;color:#745719;font-size:13px;line-height:1.7;margin-top:22px}
 
 footer{text-align:center;color:#777;padding:25px;font-size:13px}
 
@@ -46,9 +56,21 @@ footer{text-align:center;color:#777;padding:25px;font-size:13px}
 
 <header>
 
-<h2>OAKBRIDGE</h2>
+<div class="logo">OAKBRIDGE</div>
 
-<a href="dashboard.html">Back to Dashboard</a>
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="dashboard.html">Dashboard</a>
+
+<a href="transfers.html">Transfers</a>
+
+<a href="statements.html">Statements</a>
+
+<a href="profile.html">Profile</a>
+
+</nav>
 
 </header>
 
@@ -56,35 +78,87 @@ footer{text-align:center;color:#777;padding:25px;font-size:13px}
 
 <div class="card">
 
+<div class="avatar">AM</div>
+
 <h1>My Profile</h1>
 
-<p>Welcome to your customer profile.</p>
+<p>Welcome to your Oakbridge customer profile.</p>
 
-<div class="label">Customer Name</div>
+<p style="margin-top:15px"><span class="status">DEMO CUSTOMER</span></p>
+
+</div>
+
+<div class="card">
+
+<h2>Personal Information</h2>
+
+<div class="profile-grid">
+
+<div>
+
+<div class="label">Full Name</div>
 
 <div class="value">Alex Morgan (DEMO)</div>
+
+</div>
+
+<div>
 
 <div class="label">Email Address</div>
 
 <div class="value">alex.morgan@example.com</div>
 
+</div>
+
+<div>
+
 <div class="label">Phone Number</div>
 
 <div class="value">+1 000 000 0000</div>
+
+</div>
+
+<div>
 
 <div class="label">Account Type</div>
 
 <div class="value">Premium Personal Banking</div>
 
+</div>
+
+<div>
+
 <div class="label">Account Number</div>
 
 <div class="value">DEMO-2048</div>
 
+</div>
+
+<div>
+
+<div class="label">Account Status</div>
+
+<div class="value">Sample Account</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Account Information</h2>
+
+<p style="margin-top:12px;line-height:1.8;color:#68758a">
+
+This profile demonstrates how a customer information page could appear in a modern banking website.
+
+</p>
+
 <div class="notice">
 
-<strong>DEMONSTRATION PROFILE</strong><br>
-
-Oakbridge Financial Bank is a fictional website project. These details are sample information only. No real customer account exists.
+<strong>Fictional demonstration only.</strong> All customer information shown here is sample information. No real customer account exists, and this page does not store or update personal information.
 
 </div>
 
