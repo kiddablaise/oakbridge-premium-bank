@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oakbridge | Demo Dashboard</title>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f5f8;
+  color: #14243a;
+}
+
+header {
+  background: #071b33;
+  color: white;
+  padding: 22px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo { font-weight: bold; font-size: 20px; }
+.logo span { color: #d6b46a; }
+
+header a {
+  color: #d6b46a;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 35px 20px;
+}
+
+.welcome { margin-bottom: 28px; }
+.welcome h1 { font-size: 27px; margin-bottom: 8px; }
+.welcome p { color: #748195; }
+
+.demo-label {
+  display: inline-block;
+  background: #fff0cc;
+  color: #76571b;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.balance {
+  background: linear-gradient(120deg, #071b33, #17476e);
+  color: white;
+  border-radius: 14px;
+  padding: 30px;
+  margin-bottom: 25px;
+}
+
+.balance small { color: #d6b46a; }
+.balance h2 { font-size: 34px; margin: 15px 0; }
+.balance p { color: #d5e0eb; font-size: 13px; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: white;
+  padding: 23px;
+  border-radius: 10px;
+  border: 1px solid #e5e9ef;
+}
+
+.card h3 { color: #173d60; margin-bottom: 12px; }
+.card p { color: #718095; line-height: 1.6; font-size: 14px; }
+
+.transactions {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.transactions h2 { margin-bottom: 20px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 450px;
+}
+
+th, td {
+  padding: 15px 10px;
+  text-align: left;
+  border-bottom: 1px solid #edf0f4;
+  font-size: 13px;
+}
+
+th { color: #718095; }
+
+.credit { color: #188653; }
+.debit { color: #bc5151; }
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #718095;
+  font-size: 12px;
+}
+
+@media(max-width: 500px) {
+  .balance h2 { font-size: 28px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">OAKBRIDGE <span>FINANCIAL</span></div>
+  <a href="index.html">Back to Home</a>
+</header>
+
+<main class="container">
+
+  <section class="welcome">
+    <h1>Welcome to Your Dashboard</h1>
+    <p>Your Oakbridge banking demonstration overview.</p>
+    <span class="demo-label">SAMPLE ACCOUNT — NOT REAL MONEY</span>
+  </section>
+
+  <section class="balance">
+    <small>DEMO ACCOUNT BALANCE</small>
+    <h2>$25,480.00</h2>
+    <p>Sample account •••• 2048</p>
+  </section>
+
+  <section class="cards">
+
+    <div class="card">
+      <h3>Personal Banking</h3>
+      <p>Explore your sample account information.</p>
+    </div>
+
+    <div class="card">
+      <h3>Transfers</h3>
+      <p>Explore a demonstration transfer experience.</p>
+    </div>
+
+    <div class="card">
+      <h3>Statements</h3>
+      <p>View sample transaction activity.</p>
+    </div>
+
+  </section>
+
+  <section class="transactions">
+    <h2>Recent Transactions</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Date</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Sample Deposit</td>
+          <td>Nov 15, 2026</td>
+          <td class="credit">+$2,500.00</td>
+        </tr>
+
+        <tr>
+          <td>Sample Shopping</td>
+          <td>Nov 12, 2026</td>
+          <td class="debit">-$150.00</td>
+        </tr>
+
+        <tr>
+          <td>Sample Payment</td>
+          <td>Nov 10, 2026</td>
+          <td class="debit">-$75.00</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  Oakbridge Financial Bank — Fictional demonstration only.
+</footer>
+
+</body>
+</html>
