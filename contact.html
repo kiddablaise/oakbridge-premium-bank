@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Oakbridge Financial Bank</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6fa;color:#17243a}
+header{background:#071b36;color:white;padding:22px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+header h2{margin:0;color:#d9b45b;letter-spacing:2px}
+nav a{color:white;text-decoration:none;margin:8px;font-size:14px}
+.hero{background:#102d50;color:white;text-align:center;padding:55px 20px}
+.hero h1{font-size:34px;margin:0 0 12px}
+.hero p{color:#dce5f0}
+.container{max-width:950px;margin:35px auto;padding:20px;display:grid;grid-template-columns:1fr 1.3fr;gap:25px}
+.card{background:white;padding:28px;border-radius:12px;box-shadow:0 5px 20px #0000000d}
+h2{color:#102d50}
+.info{margin:22px 0;line-height:1.7}
+label{display:block;margin:15px 0 7px;font-weight:bold}
+input,textarea{width:100%;padding:13px;border:1px solid #ccd3dd;border-radius:6px;font-size:15px}
+textarea{height:120px;resize:vertical}
+button{background:#c49a42;color:#071b36;border:0;padding:14px 24px;border-radius:6px;font-weight:bold;width:100%;margin-top:18px;font-size:15px}
+.notice{background:#fff5dc;color:#654d19;padding:12px;border-radius:6px;font-size:13px;line-height:1.5}
+footer{background:#071b36;color:white;text-align:center;padding:25px;font-size:13px}
+@media(max-width:650px){.container{grid-template-columns:1fr;margin:15px auto}.hero h1{font-size:27px}header{gap:15px}nav a{display:inline-block;margin:6px 5px}}
+</style>
+</head>
+<body>
+
+<header>
+<h2>OAKBRIDGE</h2>
+<nav>
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="transfers.html">Transfers</a>
+<a href="profile.html">Profile</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Contact Us</h1>
+<p>We're here to help. Get in touch with Oakbridge.</p>
+</section>
+
+<main class="container">
+<section class="card">
+<h2>Get In Touch</h2>
+<div class="info">
+<strong>Email</strong><br>
+support@example.com
+</div>
+<div class="info">
+<strong>Phone</strong><br>
++1 000 000 0000
+</div>
+<div class="info">
+<strong>Office Hours</strong><br>
+Monday – Friday<br>
+9:00 AM – 5:00 PM
+</div>
+<p class="notice">These are fictional sample contact details for demonstration only.</p>
+</section>
+
+<section class="card">
+<h2>Send Us a Message</h2>
+<form id="contactForm">
+<label for="name">Your Name</label>
+<input id="name" type="text" placeholder="Enter a sample name" required>
+
+<label for="email">Email Address</label>
+<input id="email" type="email" placeholder="Enter a sample email" required>
+
+<label for="message">Your Message</label>
+<textarea id="message" placeholder="Write a sample message" required></textarea>
+
+<button type="submit">Submit Demo Message</button>
+</form>
+<p id="response" role="status"></p>
+<p class="notice">Demo only. Messages are not sent, collected or stored. Do not enter real personal or banking information.</p>
+</section>
+</main>
+
+<footer>
+<p>© 2026 Oakbridge Financial Bank</p>
+<p>Fictional banking website demonstration only. Not a real bank.</p>
+</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit",function(event){
+event.preventDefault();
+document.getElementById("response").textContent="Demo preview only. Your message has not been sent or stored.";
+this.reset();
+});
+</script>
+
+</body>
+</html>
