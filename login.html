@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oakbridge | Demo Login</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #071b33;
+  min-height: 100vh;
+  color: white;
+}
+
+header {
+  padding: 25px 7%;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #d6b46a;
+}
+
+.container {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  gap: 70px;
+  flex-wrap: wrap;
+}
+
+.welcome {
+  max-width: 430px;
+}
+
+.welcome small {
+  color: #d6b46a;
+  letter-spacing: 3px;
+}
+
+.welcome h1 {
+  font-size: 42px;
+  line-height: 1.2;
+  margin: 22px 0;
+}
+
+.welcome p {
+  color: #c5d0dc;
+  line-height: 1.8;
+}
+
+.login-card {
+  background: white;
+  color: #10243b;
+  width: 100%;
+  max-width: 390px;
+  padding: 38px 30px;
+  border-radius: 14px;
+  box-shadow: 0 15px 45px rgba(0,0,0,.25);
+}
+
+.login-card h2 {
+  font-size: 27px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #758195;
+  margin-bottom: 28px;
+  font-size: 14px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 9px;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #dce2e9;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 6px;
+  background: #c9a45b;
+  color: #071b33;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.notice {
+  background: #fff6df;
+  color: #71551d;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-top: 20px;
+}
+
+footer {
+  text-align: center;
+  color: #9eafc1;
+  font-size: 12px;
+  padding: 25px;
+}
+
+@media(max-width: 600px) {
+  .container {
+    gap: 35px;
+  }
+
+  .welcome h1 {
+    font-size: 34px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    OAKBRIDGE <span>FINANCIAL</span>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="welcome">
+    <small>WELCOME TO OAKBRIDGE</small>
+    <h1>Your financial journey, beautifully simplified.</h1>
+    <p>
+      Discover a modern banking experience
+      designed around convenience, confidence
+      and your financial ambitions.
+    </p>
+  </section>
+
+  <section class="login-card">
+    <h2>Welcome Back</h2>
+    <p class="subtitle">
+      Explore the Oakbridge demo experience.
+    </p>
+
+    <form id="demoForm">
+      <label for="username">Demo Username</label>
+      <input
+        type="text"
+        id="username"
+        placeholder="Enter demo username"
+        autocomplete="off"
+        required
+      >
+
+      <label for="password">Demo Password</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter any sample text"
+        autocomplete="off"
+        required
+      >
+
+      <button type="submit">Explore Demo</button>
+    </form>
+
+    <div class="notice">
+      DEMO ONLY: This is not a real bank login.
+      Do not enter real passwords or financial
+      information. Nothing is sent or stored.
+    </div>
+
+    <p id="message" style="margin-top:15px;font-size:13px;"></p>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Oakbridge Financial Bank |
+  Fictional demonstration only
+</footer>
+
+<script>
+document.getElementById("demoForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  document.getElementById("message").textContent =
+    "Welcome to the Oakbridge demonstration. No account was accessed.";
+});
+</script>
+
+</body>
+</html>
