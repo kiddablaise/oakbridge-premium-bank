@@ -10,67 +10,663 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Oakbridge Financial Bank</title>
+<title>Oakbridge Financial Bank | Banking With Confidence</title>
 
 <style>
 
-*{box-sizing:border-box}
+* {
 
-body{margin:0;font-family:Arial,sans-serif;color:#17243a;background:#f5f7fb}
+    margin: 0;
 
-header{background:#071b36;padding:20px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+    padding: 0;
 
-.logo{font-size:25px;font-weight:bold;color:#d9b45b;letter-spacing:2px}
+    box-sizing: border-box;
 
-nav{display:flex;flex-wrap:wrap;gap:18px}
+}
 
-nav a{color:white;text-decoration:none;font-size:14px}
+html {
 
-nav a:hover{color:#d9b45b}
+    scroll-behavior: smooth;
 
-.hero{background:linear-gradient(120deg,#071b36,#163c65);color:white;padding:95px 8%;text-align:center}
+}
 
-.hero h1{font-size:42px;max-width:750px;margin:0 auto 20px;line-height:1.2}
+body {
 
-.hero p{font-size:17px;color:#dce5f0;line-height:1.7;max-width:650px;margin:0 auto 30px}
+    font-family: Arial, sans-serif;
 
-.btn{display:inline-block;background:#d9b45b;color:#071b36;text-decoration:none;padding:15px 28px;border-radius:5px;font-weight:bold;margin:6px}
+    color: #17243a;
 
-.btn-outline{background:transparent;color:white;border:1px solid #d9b45b}
+    background: #ffffff;
 
-.section{padding:65px 8%;text-align:center}
+    line-height: 1.6;
 
-.section h2{font-size:30px;color:#102d50}
+}
 
-.section p{line-height:1.7;color:#657186}
+header {
 
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:35px}
+    background: #071a35;
 
-.card{background:white;padding:30px 22px;border-radius:10px;box-shadow:0 5px 20px #0000000b}
+    padding: 19px 7%;
 
-.card h3{color:#102d50}
+    display: flex;
 
-.about{background:white}
+    justify-content: space-between;
 
-.cta{background:#102d50;color:white;padding:55px 20px;text-align:center}
+    align-items: center;
 
-.cta h2{color:white}
+    flex-wrap: wrap;
 
-.cta p{color:#dce5f0}
+    gap: 18px;
 
-footer{background:#071b36;color:white;text-align:center;padding:28px 15px;font-size:13px;line-height:1.8}
+}
 
-@media(max-width:700px){
+.logo {
 
-.hero{padding:70px 6%}
+    color: white;
 
-.hero h1{font-size:32px}
+    font-size: 23px;
 
-.cards{grid-template-columns:1fr}
+    font-weight: bold;
 
-header{gap:18px}
+    letter-spacing: 1px;
 
-nav{gap:13px}
+}
+
+.logo span {
+
+    color: #d8b15f;
+
+}
+
+nav {
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 22px;
+
+}
+
+nav a {
+
+    color: #edf1f7;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+}
+
+nav a:hover {
+
+    color: #d8b15f;
+
+}
+
+.nav-login {
+
+    border: 1px solid #d8b15f;
+
+    padding: 9px 18px;
+
+    border-radius: 5px;
+
+}
+
+.hero {
+
+    background:
+
+    linear-gradient(110deg, rgba(5,22,47,.97), rgba(8,40,75,.86)),
+
+    url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    min-height: 540px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 75px 8%;
+
+    color: white;
+
+}
+
+.hero-content {
+
+    max-width: 690px;
+
+}
+
+.eyebrow {
+
+    color: #e1bd70;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 18px;
+
+}
+
+.hero h1 {
+
+    font-size: clamp(38px, 6vw, 62px);
+
+    line-height: 1.13;
+
+    margin-bottom: 22px;
+
+}
+
+.hero h1 span {
+
+    color: #e0b85e;
+
+}
+
+.hero p {
+
+    color: #dce4ef;
+
+    font-size: 17px;
+
+    max-width: 570px;
+
+    margin-bottom: 32px;
+
+}
+
+.buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+
+}
+
+.btn {
+
+    display: inline-block;
+
+    padding: 14px 26px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+}
+
+.btn-gold {
+
+    background: #d8b15f;
+
+    color: #071a35;
+
+}
+
+.btn-outline {
+
+    border: 1px solid white;
+
+    color: white;
+
+}
+
+.btn:hover {
+
+    opacity: .88;
+
+}
+
+.trust-strip {
+
+    background: #f5f6f8;
+
+    padding: 24px 7%;
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 18px;
+
+    text-align: center;
+
+}
+
+.trust-item strong {
+
+    display: block;
+
+    color: #09264b;
+
+    font-size: 15px;
+
+}
+
+.trust-item span {
+
+    color: #788397;
+
+    font-size: 12px;
+
+}
+
+.section {
+
+    padding: 75px 7%;
+
+}
+
+.section-heading {
+
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 42px;
+
+}
+
+.section-heading .eyebrow {
+
+    color: #b18a3e;
+
+}
+
+.section-heading h2 {
+
+    font-size: 34px;
+
+    color: #09264b;
+
+    margin-bottom: 12px;
+
+}
+
+.section-heading p {
+
+    color: #788397;
+
+    font-size: 15px;
+
+}
+
+.services {
+
+    background: #ffffff;
+
+}
+
+.service-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 22px;
+
+    max-width: 1150px;
+
+    margin: auto;
+
+}
+
+.service-card {
+
+    border: 1px solid #e7eaf0;
+
+    border-radius: 10px;
+
+    padding: 29px 24px;
+
+    background: white;
+
+    transition: .2s;
+
+}
+
+.service-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(10,30,60,.09);
+
+    border-color: #d8b15f;
+
+}
+
+.service-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: #f8f2e5;
+
+    color: #9d762d;
+
+    border-radius: 9px;
+
+    font-size: 24px;
+
+    margin-bottom: 19px;
+
+}
+
+.service-card h3 {
+
+    color: #09264b;
+
+    font-size: 18px;
+
+    margin-bottom: 11px;
+
+}
+
+.service-card p {
+
+    color: #788397;
+
+    font-size: 14px;
+
+}
+
+.about {
+
+    background: #f5f7fa;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 55px;
+
+}
+
+.about-image {
+
+    min-height: 350px;
+
+    border-radius: 12px;
+
+    background:
+
+    linear-gradient(rgba(5,22,47,.12), rgba(5,22,47,.12)),
+
+    url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+}
+
+.about-content .eyebrow {
+
+    color: #b18a3e;
+
+}
+
+.about-content h2 {
+
+    font-size: 35px;
+
+    color: #09264b;
+
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+
+}
+
+.about-content p {
+
+    color: #69768a;
+
+    font-size: 15px;
+
+    margin-bottom: 17px;
+
+}
+
+.about-points {
+
+    list-style: none;
+
+    margin: 20px 0 27px;
+
+}
+
+.about-points li {
+
+    margin-bottom: 12px;
+
+    color: #26374d;
+
+    font-size: 14px;
+
+}
+
+.about-points li::before {
+
+    content: "✓";
+
+    color: #b18a3e;
+
+    font-weight: bold;
+
+    margin-right: 10px;
+
+}
+
+.cta {
+
+    background: linear-gradient(120deg, #071a35, #123e68);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 68px 7%;
+
+}
+
+.cta h2 {
+
+    font-size: 34px;
+
+    margin-bottom: 13px;
+
+}
+
+.cta p {
+
+    color: #dce4ef;
+
+    max-width: 620px;
+
+    margin: 0 auto 26px;
+
+    font-size: 15px;
+
+}
+
+footer {
+
+    background: #041226;
+
+    color: #dce4ef;
+
+    padding: 45px 7% 20px;
+
+}
+
+.footer-grid {
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr;
+
+    gap: 35px;
+
+    padding-bottom: 30px;
+
+}
+
+footer h3 {
+
+    color: white;
+
+    margin-bottom: 15px;
+
+    font-size: 17px;
+
+}
+
+footer p, footer a {
+
+    color: #aebbd0;
+
+    font-size: 13px;
+
+    text-decoration: none;
+
+}
+
+footer a:hover {
+
+    color: #e0b85e;
+
+}
+
+.footer-links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+}
+
+.footer-bottom {
+
+    border-top: 1px solid #26374d;
+
+    padding-top: 18px;
+
+    text-align: center;
+
+    color: #9ba9bc;
+
+    font-size: 12px;
+
+}
+
+.footer-disclosure {
+
+    margin-top: 7px;
+
+    font-size: 11px;
+
+    color: #8998ad;
+
+}
+
+@media(max-width: 750px) {
+
+    header {
+
+        padding: 18px 5%;
+
+    }
+
+    nav {
+
+        gap: 13px;
+
+    }
+
+    .hero {
+
+        min-height: 500px;
+
+        padding: 65px 6%;
+
+    }
+
+    .hero p {
+
+        font-size: 15px;
+
+    }
+
+    .section {
+
+        padding: 55px 6%;
+
+    }
+
+    .about {
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+    .about-image {
+
+        min-height: 260px;
+
+    }
+
+    .about-content h2 {
+
+        font-size: 29px;
+
+    }
+
+    .section-heading h2,
+
+    .cta h2 {
+
+        font-size: 28px;
+
+    }
+
+    .footer-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 27px;
+
+    }
 
 }
 
@@ -82,99 +678,333 @@ nav{gap:13px}
 
 <header>
 
-<div class="logo">OAKBRIDGE</div>
+    <div class="logo">OAKBRIDGE <span>FINANCIAL</span></div>
 
-<nav>
+    <nav>
 
-<a href="index.html">Home</a>
+        <a href="index.html">Home</a>
 
-<a href="#about">About</a>
+        <a href="#about">About Us</a>
 
-<a href="#services">Services</a>
+        <a href="#services">Services</a>
 
-<a href="contact.html">Contact</a>
+        <a href="contact.html">Contact</a>
 
-<a href="login.html">Login</a>
+        <a class="nav-login" href="login.html">Login</a>
 
-</nav>
+    </nav>
 
 </header>
 
 <section class="hero">
 
-<h1>Banking With Confidence. Building With Purpose.</h1>
+    <div class="hero-content">
 
-<p>Discover a modern banking experience designed around convenience, innovation and financial confidence.</p>
+        <div class="eyebrow">WELCOME TO OAKBRIDGE</div>
 
-<a class="btn" href="login.html">Explore Demo Banking</a>
+        <h1>
 
-<a class="btn btn-outline" href="#about">Learn More</a>
+            Banking With Confidence.
+
+            <span>Building With Purpose.</span>
+
+        </h1>
+
+        <p>
+
+            Explore a modern banking experience designed around
+
+            your financial goals, everyday needs and future ambitions.
+
+        </p>
+
+        <div class="buttons">
+
+            <a href="login.html" class="btn btn-gold">Get Started</a>
+
+            <a href="login.html" class="btn btn-outline">Login to Your Account</a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="trust-strip">
+
+    <div class="trust-item">
+
+        <strong>Personal Banking</strong>
+
+        <span>Everyday financial solutions</span>
+
+    </div>
+
+    <div class="trust-item">
+
+        <strong>Business Banking</strong>
+
+        <span>Support for business ambitions</span>
+
+    </div>
+
+    <div class="trust-item">
+
+        <strong>Online Access</strong>
+
+        <span>Convenient account navigation</span>
+
+    </div>
+
+    <div class="trust-item">
+
+        <strong>Account Information</strong>
+
+        <span>Organised financial overviews</span>
+
+    </div>
+
+</section>
+
+<section class="section services" id="services">
+
+    <div class="section-heading">
+
+        <div class="eyebrow">OUR BANKING SERVICES</div>
+
+        <h2>Solutions For Every Stage</h2>
+
+        <p>
+
+            Explore a range of banking categories designed
+
+            to represent different personal and business needs.
+
+        </p>
+
+    </div>
+
+    <div class="service-grid">
+
+        <div class="service-card">
+
+            <div class="service-icon">▣</div>
+
+            <h3>Personal Savings</h3>
+
+            <p>
+
+                A dedicated account category for organising
+
+                savings goals and future plans.
+
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <div class="service-icon">◇</div>
+
+            <h3>Personal Checking</h3>
+
+            <p>
+
+                An everyday banking category for managing
+
+                routine account activity.
+
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <div class="service-icon">▤</div>
+
+            <h3>Business Checking</h3>
+
+            <p>
+
+                A banking category designed around
+
+                business account organisation.
+
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <div class="service-icon">◆</div>
+
+            <h3>Business Savings</h3>
+
+            <p>
+
+                A category for businesses to organise
+
+                their savings objectives.
+
+            </p>
+
+        </div>
+
+        <div class="service-card">
+
+            <div class="service-icon">♛</div>
+
+            <h3>Premium Banking</h3>
+
+            <p>
+
+                An elevated account category with a
+
+                refined banking presentation.
+
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
 
 <section class="section about" id="about">
 
-<h2>About Oakbridge</h2>
+    <div class="about-image"></div>
 
-<p>Oakbridge Financial Bank is a fictional banking brand created to demonstrate a modern digital banking website. Our sample design focuses on accessibility, simplicity and a premium customer experience.</p>
+    <div class="about-content">
 
-</section>
+        <div class="eyebrow">ABOUT OAKBRIDGE</div>
 
-<section class="section" id="services">
+        <h2>A Modern Approach To Banking.</h2>
 
-<h2>Explore Our Banking Features</h2>
+        <p>
 
-<p>Discover the sample features available in this website demonstration.</p>
+            Oakbridge Financial Bank represents a modern
 
-<div class="cards">
+            approach to personal and business banking,
 
-<div class="card">
+            bringing together thoughtful design, organised
 
-<h3>Digital Banking</h3>
+            account information and convenient digital navigation.
 
-<p>Explore a sample online banking dashboard and account overview.</p>
+        </p>
 
-</div>
+        <p>
 
-<div class="card">
+            Our platform is presented around simplicity,
 
-<h3>Transfers</h3>
+            clarity and a customer-focused experience.
 
-<p>Experience a demonstration of a banking transfer form without sending money.</p>
+            We believe financial information should be
 
-</div>
+            organised and easy to understand.
 
-<div class="card">
+        </p>
 
-<h3>Account Statements</h3>
+        <ul class="about-points">
 
-<p>View a sample account statement and transaction history.</p>
+            <li>Personal and business banking categories</li>
 
-</div>
+            <li>Clear account information layouts</li>
 
-</div>
+            <li>Convenient digital navigation</li>
+
+            <li>Professional and consistent presentation</li>
+
+        </ul>
+
+        <a href="contact.html" class="btn btn-gold">Contact Us</a>
+
+    </div>
 
 </section>
 
 <section class="cta">
 
-<h2>Experience Oakbridge</h2>
+    <h2>Your Financial Journey Starts Here.</h2>
 
-<p>Explore our fictional digital banking demonstration.</p>
+    <p>
 
-<a class="btn" href="login.html">Enter Demo Dashboard</a>
+        Explore the Oakbridge platform and discover
 
-<a class="btn btn-outline" href="contact.html">Contact Us</a>
+        a clean, organised approach to banking information.
+
+    </p>
+
+    <a href="login.html" class="btn btn-gold">Get Started</a>
 
 </section>
 
 <footer>
 
-<p>© 2026 Oakbridge Financial Bank</p>
+    <div class="footer-grid">
 
-<p>Fictional banking website demonstration only. Not a real bank.</p>
+        <div>
 
-<p>No real banking services, payments or financial transactions are provided.</p>
+            <h3>OAKBRIDGE <span style="color:#d8b15f">FINANCIAL</span></h3>
+
+            <p>
+
+                Banking With Confidence. Building With Purpose.
+
+                Explore our banking platform and account information.
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <div class="footer-links">
+
+                <a href="index.html">Home</a>
+
+                <a href="#about">About Us</a>
+
+                <a href="#services">Our Services</a>
+
+                <a href="login.html">Login</a>
+
+            </div>
+
+        </div>
+
+        <div>
+
+            <h3>Contact Us</h3>
+
+            <div class="footer-links">
+
+                <a href="mailto:oakbridgefinancialbank.org@gmail.com">
+
+                    oakbridgefinancialbank.org@gmail.com
+
+                </a>
+
+                <a href="contact.html">Customer Support</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 Oakbridge Financial Bank. All rights reserved.
+
+        <div class="footer-disclosure">
+
+            Illustrative Banking Platform. Services and account information shown are illustrative and do not represent actual banking services.
+
+        </div>
+
+    </div>
 
 </footer>
 
