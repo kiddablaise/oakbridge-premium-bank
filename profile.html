@@ -1,173 +1,94 @@
 
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>My Profile | Oakbridge Financial Bank</title>
-
 <style>
-
 *{box-sizing:border-box}
-
-body{margin:0;font-family:Arial,sans-serif;background:#f4f6fa;color:#17243b}
-
-header{background:#071b35;padding:20px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
-
-.logo{color:#d6b45d;font-size:22px;font-weight:bold}
-
-nav{display:flex;gap:16px;flex-wrap:wrap}
-
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6fa;color:#17243a}
+header{background:#071b36;padding:20px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.logo{color:#d9b45b;font-size:23px;font-weight:bold;letter-spacing:2px}
+nav{display:flex;flex-wrap:wrap;gap:15px}
 nav a{color:white;text-decoration:none;font-size:14px}
-
-nav a:hover{color:#d6b45d}
-
-main{max-width:850px;margin:40px auto;padding:20px}
-
-.card{background:white;padding:30px;border-radius:14px;box-shadow:0 5px 25px #10213b12;margin-bottom:22px}
-
-h1,h2{color:#071b35}
-
-.avatar{width:75px;height:75px;background:#071b35;color:#d6b45d;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:27px;font-weight:bold;margin-bottom:18px}
-
-.profile-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px;margin-top:25px}
-
-.label{font-size:12px;color:#788397;margin-bottom:7px}
-
-.value{font-size:16px;font-weight:bold;color:#17243b}
-
-.status{display:inline-block;background:#fff2cf;color:#84631c;padding:7px 12px;border-radius:20px;font-size:12px;font-weight:bold}
-
-.notice{background:#fff6df;padding:15px;border-radius:8px;color:#745719;font-size:13px;line-height:1.7;margin-top:22px}
-
-footer{text-align:center;color:#777;padding:25px;font-size:13px}
-
+.hero{background:#102d50;color:white;text-align:center;padding:40px 20px}
+.container{max-width:800px;margin:35px auto;padding:20px}
+.card{background:white;padding:30px;border-radius:12px;box-shadow:0 5px 20px #0000000d}
+.avatar{width:75px;height:75px;background:#102d50;color:#d9b45b;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:bold;margin-bottom:15px}
+h2{color:#102d50}
+.detail{padding:17px 0;border-bottom:1px solid #e5e8ee;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.detail span:first-child{color:#657186}
+.notice{background:#fff5dc;color:#654d19;padding:15px;border-radius:7px;margin-top:22px;font-size:13px;line-height:1.6}
+footer{background:#071b36;color:white;text-align:center;padding:25px;font-size:13px}
+@media(max-width:600px){.container{padding:14px}.card{padding:22px}}
 </style>
-
 </head>
-
 <body>
 
 <header>
-
 <div class="logo">OAKBRIDGE</div>
-
 <nav>
-
 <a href="index.html">Home</a>
-
 <a href="dashboard.html">Dashboard</a>
-
 <a href="transfers.html">Transfers</a>
-
 <a href="statements.html">Statements</a>
-
 <a href="profile.html">Profile</a>
-
+<a href="contact.html">Contact</a>
 </nav>
-
 </header>
 
-<main>
-
-<div class="card">
-
-<div class="avatar">AM</div>
-
+<section class="hero">
 <h1>My Profile</h1>
+<p>Personal Banking Account Overview</p>
+</section>
 
-<p>Welcome to your Oakbridge customer profile.</p>
+<main class="container">
+<section class="card">
+<div class="avatar">GK</div>
+<h2>Gretchen King</h2>
+<p>Oakbridge Personal Banking</p>
 
-<p style="margin-top:15px"><span class="status">DEMO CUSTOMER</span></p>
-
+<div class="detail">
+<span>Customer Name</span>
+<strong>Gretchen King</strong>
 </div>
 
-<div class="card">
-
-<h2>Personal Information</h2>
-
-<div class="profile-grid">
-
-<div>
-
-<div class="label">Full Name</div>
-
-<div class="value">Alex Morgan (DEMO)</div>
-
+<div class="detail">
+<span>Account Number</span>
+<strong>8472916305</strong>
 </div>
 
-<div>
-
-<div class="label">Email Address</div>
-
-<div class="value">alex.morgan@example.com</div>
-
+<div class="detail">
+<span>Checking Account</span>
+<strong>Available as sample account</strong>
 </div>
 
-<div>
-
-<div class="label">Phone Number</div>
-
-<div class="value">+1 000 000 0000</div>
-
+<div class="detail">
+<span>Savings Account</span>
+<strong>Available as sample account</strong>
 </div>
 
-<div>
-
-<div class="label">Account Type</div>
-
-<div class="value">Premium Personal Banking</div>
-
+<div class="detail">
+<span>Combined Sample Balance</span>
+<strong>$150,000.00</strong>
 </div>
 
-<div>
-
-<div class="label">Account Number</div>
-
-<div class="value">DEMO-2048</div>
-
+<div class="detail">
+<span>Currency</span>
+<strong>US Dollar (USD)</strong>
 </div>
-
-<div>
-
-<div class="label">Account Status</div>
-
-<div class="value">Sample Account</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>Account Information</h2>
-
-<p style="margin-top:12px;line-height:1.8;color:#68758a">
-
-This profile demonstrates how a customer information page could appear in a modern banking website.
-
-</p>
 
 <div class="notice">
-
-<strong>Fictional demonstration only.</strong> All customer information shown here is sample information. No real customer account exists, and this page does not store or update personal information.
-
+<strong>Important Notice:</strong> This is a fictional banking website demonstration. All customer details, account numbers and balances are sample information. No real banking account or financial services are provided.
 </div>
-
-</div>
-
+</section>
 </main>
 
-<footer>© 2026 Oakbridge Financial Bank — Fictional Demo</footer>
+<footer>
+<p>© 2026 Oakbridge Financial Bank</p>
+<p>Fictional banking website demonstration only. Not a real bank.</p>
+</footer>
 
 </body>
-
 </html>
