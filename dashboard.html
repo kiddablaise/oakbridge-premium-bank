@@ -4,205 +4,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oakbridge Financial Bank | Dashboard</title>
-
+<title>Dashboard | Oakbridge Financial Bank</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
-font-family:Arial,sans-serif;
-background:#f4f6fa;
-color:#17243b;
-}
-
-header{
-background:#071b3a;
-padding:22px 6%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-gap:18px;
-}
-
-.brand{
-font-size:20px;
-font-weight:bold;
-letter-spacing:.5px;
-color:#e5bd62;
-}
-
-nav{
-display:flex;
-flex-wrap:wrap;
-gap:18px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-size:14px;
-}
-
-nav a:hover{
-color:#e5bd62;
-}
-
-main{
-max-width:1150px;
-margin:40px auto;
-padding:0 22px;
-}
-
-.welcome{
-margin-bottom:28px;
-}
-
-.welcome h1{
-font-size:28px;
-margin-bottom:8px;
-color:#071b3a;
-}
-
-.welcome p{
-color:#748196;
-}
-
-.accounts{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
-
-.card{
-background:white;
-border-radius:12px;
-padding:25px;
-box-shadow:0 5px 20px rgba(0,0,0,.05);
-border:1px solid #edf0f4;
-}
-
-.card p{
-color:#718096;
-font-size:14px;
-margin-bottom:17px;
-}
-
-.balance{
-font-size:27px;
-font-weight:bold;
-color:#071b3a;
-}
-
-.total{
-background:#071b3a;
-color:white;
-border:none;
-}
-
-.total p{
-color:#e1e8f2;
-}
-
-.total .balance{
-color:#e5bd62;
-}
-
-.history{
-background:white;
-margin-top:30px;
-border-radius:12px;
-padding:25px;
-box-shadow:0 5px 20px rgba(0,0,0,.05);
-}
-
-.history h2{
-font-size:20px;
-color:#071b3a;
-margin-bottom:22px;
-}
-
-.table-wrap{
-overflow-x:auto;
-}
-
-table{
-width:100%;
-border-collapse:collapse;
-min-width:750px;
-}
-
-th{
-text-align:left;
-background:#f5f7fa;
-color:#66758a;
-padding:16px 13px;
-font-size:12px;
-text-transform:uppercase;
-letter-spacing:.5px;
-}
-
-td{
-padding:19px 13px;
-border-bottom:1px solid #edf0f4;
-font-size:14px;
-white-space:nowrap;
-}
-
-.amount{
-color:#16834b;
-font-weight:bold;
-}
-
-.status{
-display:inline-block;
-background:#e7f6ed;
-color:#16834b;
-padding:7px 12px;
-border-radius:20px;
-font-size:12px;
-font-weight:bold;
-}
-
-footer{
-text-align:center;
-color:#8490a0;
-font-size:12px;
-padding:25px;
-}
-
-@media(max-width:750px){
-.accounts{
-grid-template-columns:1fr;
-}
-
-header{
-padding:20px;
-}
-
-.brand{
-font-size:17px;
-}
-
-main{
-margin-top:28px;
-}
-
-nav{
-gap:13px;
-}
-
-.card{
-padding:22px;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f3f6fa;color:#14243a}
+header{background:#071b36;color:white;padding:20px}
+.topbar{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-size:19px;font-weight:bold;letter-spacing:1px}
+.brand span{display:block;color:#d6ad55;font-size:10px;letter-spacing:3px;margin-top:5px}
+nav{background:#102d50;padding:13px 10px;text-align:center}
+nav a{display:inline-block;color:white;text-decoration:none;font-size:13px;margin:5px 9px}
+nav a:hover{color:#e2bd70}
+.container{max-width:1100px;margin:30px auto;padding:0 18px}
+.welcome{margin-bottom:25px}
+.welcome small{color:#a47b2e;font-weight:bold;letter-spacing:1px}
+.welcome h1{font-size:27px;margin:8px 0}
+.welcome p{color:#718096;font-size:14px}
+.balance-card{background:linear-gradient(135deg,#071b36,#173f69);color:white;padding:27px;border-radius:18px;margin-bottom:22px;box-shadow:0 8px 24px rgba(7,27,54,.14)}
+.balance-card small{color:#e2bd70;letter-spacing:1.5px;font-size:11px}
+.balance-card h2{font-size:34px;margin:12px 0}
+.balance-card p{color:#c8d5e4;font-size:13px}
+.accounts{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:30px}
+.account{background:white;padding:22px;border-radius:15px;box-shadow:0 4px 15px rgba(20,36,58,.05);border:1px solid #e7edf4}
+.account-icon{width:42px;height:42px;border-radius:12px;background:#edf2f8;display:flex;align-items:center;justify-content:center;font-size:21px;margin-bottom:15px}
+.account h3{font-size:15px;margin-bottom:8px}
+.account h2{font-size:25px;color:#102d50;margin-bottom:8px}
+.account p{font-size:12px;color:#8290a1}
+.section-title{font-size:19px;margin-bottom:16px}
+.quick-links{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:30px}
+.quick-links a{background:white;padding:19px 10px;border-radius:13px;text-decoration:none;color:#14243a;text-align:center;border:1px solid #e7edf4;box-shadow:0 4px 12px rgba(20,36,58,.04)}
+.quick-links a span{display:block;font-size:23px;margin-bottom:9px}
+.quick-links a strong{font-size:12px}
+.activity{background:white;border-radius:15px;padding:20px;border:1px solid #e7edf4;box-shadow:0 4px 15px rgba(20,36,58,.04);overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{text-align:left;padding:15px 10px;border-bottom:1px solid #edf0f4;font-size:13px}
+th{color:#7b8796;font-size:11px;text-transform:uppercase}
+.credit{color:#16834e;font-weight:bold}
+.status{color:#16834e;background:#e8f7ef;padding:6px 10px;border-radius:20px;font-size:11px}
+footer{background:#071b36;color:#c8d5e4;text-align:center;padding:23px 15px;margin-top:40px;font-size:12px;line-height:1.8}
+@media(max-width:650px){
+.accounts{grid-template-columns:1fr}
+.quick-links{grid-template-columns:repeat(2,1fr)}
+.balance-card h2{font-size:29px}
+.welcome h1{font-size:24px}
+nav a{margin:7px 8px}
 }
 </style>
 </head>
-
 <body>
-
 <header>
-<div class="brand">OAKBRIDGE FINANCIAL BANK</div>
+<div class="topbar">
+<div class="brand">OAKBRIDGE<span>FINANCIAL BANK</span></div>
+<div>☰</div>
+</div>
+</header>
 
 <nav>
 <a href="index.html">Home</a>
@@ -212,75 +67,74 @@ padding:22px;
 <a href="statements.html">Statements</a>
 <a href="contact.html">Contact</a>
 </nav>
-</header>
 
-<main>
-
-<div class="welcome">
-<h1>Welcome, Gretchel King</h1>
-<p>Here's your account overview.</p>
-</div>
-
-<section class="accounts">
-
-<div class="card total">
-<p>Combined Balance</p>
-<div class="balance">$150,000.00</div>
-</div>
-
-<div class="card">
-<p>Checking Account</p>
-<div class="balance">$50,000.00</div>
-</div>
-
-<div class="card">
-<p>Savings Account</p>
-<div class="balance">$100,000.00</div>
-</div>
-
+<main class="container">
+<section class="welcome">
+<small>WELCOME BACK</small>
+<h1>Gretchel King</h1>
+<p>Here's your illustrative account overview.</p>
 </section>
 
-<section class="history">
-<h2>Transaction History</h2>
+<section class="balance-card">
+<small>COMBINED BALANCE</small>
+<h2>$150,000.00</h2>
+<p>Illustrative account summary</p>
+</section>
 
-<div class="table-wrap">
+<section class="accounts">
+<div class="account">
+<div class="account-icon">💳</div>
+<h3>Checking Account</h3>
+<h2>$50,000.00</h2>
+<p>Account ending *****4821</p>
+</div>
+<div class="account">
+<div class="account-icon">🏦</div>
+<h3>Savings Account</h3>
+<h2>$100,000.00</h2>
+<p>Account ending *****7396</p>
+</div>
+</section>
+
+<h2 class="section-title">Quick Access</h2>
+<section class="quick-links">
+<a href="profile.html"><span>👤</span><strong>My Profile</strong></a>
+<a href="transfers.html"><span>↔️</span><strong>Transfers</strong></a>
+<a href="statements.html"><span>📄</span><strong>Statements</strong></a>
+<a href="contact.html"><span>🎧</span><strong>Contact Us</strong></a>
+</section>
+
+<h2 class="section-title">Recent Account Activity</h2>
+<section class="activity">
 <table>
 <thead>
 <tr>
-<th>Date</th>
-<th>Description</th>
-<th>Reference</th>
-<th>Amount</th>
-<th>Status</th>
+<th>Date</th><th>Description</th><th>Reference</th><th>Amount</th><th>Status</th>
 </tr>
 </thead>
-
 <tbody>
-<tr>
-<td>Nov 10, 2026</td>
-<td>Incoming Account Credit</td>
-<td>OBK203843</td>
-<td class="amount">+$50,000.00</td>
-<td><span class="status">Completed</span></td>
-</tr>
-
 <tr>
 <td>Nov 14, 2026</td>
 <td>Incoming Account Credit</td>
 <td>OBK203845</td>
-<td class="amount">+$100,000.00</td>
+<td class="credit">+$100,000.00</td>
+<td><span class="status">Completed</span></td>
+</tr>
+<tr>
+<td>Nov 10, 2026</td>
+<td>Incoming Account Credit</td>
+<td>OBK203843</td>
+<td class="credit">+$50,000.00</td>
 <td><span class="status">Completed</span></td>
 </tr>
 </tbody>
 </table>
-</div>
 </section>
-
 </main>
 
 <footer>
-© 2026 Oakbridge Financial Bank · Illustrative banking demonstration
+© 2026 Oakbridge Financial Bank<br>
+Illustrative Banking Platform.
 </footer>
-
 </body>
 </html>
