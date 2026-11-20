@@ -1,801 +1,112 @@
 
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Account Statements | Oakbridge Financial Bank</title>
+<title>Statements | Oakbridge Financial Bank</title>
 
 <style>
-
-* {
-
-    box-sizing: border-box;
-
-    margin: 0;
-
-    padding: 0;
-
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f4f6fa;color:#17243b}
+header{background:#071b3a;padding:22px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.logo{font-size:21px;font-weight:bold;color:#e5bd62}
+nav{display:flex;flex-wrap:wrap;gap:18px}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:#e5bd62}
+.container{max-width:950px;margin:45px auto;padding:0 20px}
+h1{color:#071b3a;margin-bottom:8px}
+.subtitle{color:#718096;margin-bottom:25px}
+.card{background:white;padding:28px;border-radius:13px;box-shadow:0 6px 25px rgba(0,0,0,.06);margin-bottom:22px}
+h2{font-size:18px;color:#071b3a;margin-bottom:20px}
+.balances{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.balance{padding:22px;border:1px solid #e2e7ef;border-radius:10px}
+.balance p{color:#718096;font-size:14px;margin-bottom:10px}
+.amount{font-size:25px;font-weight:bold;color:#071b3a}
+.total{background:#071b3a;color:white}
+.total p,.total .amount{color:white}
+.details{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.label{color:#8290a3;font-size:12px;margin-bottom:7px}
+.value{font-weight:bold;color:#24334b}
+footer{text-align:center;padding:25px;color:#718096;font-size:13px}
+@media(max-width:600px){
+header{padding:20px}
+.container{margin:30px auto}
+.balances,.details{grid-template-columns:1fr}
+.card{padding:22px}
 }
-
-body {
-
-    font-family: Arial, sans-serif;
-
-    background: #f3f5f9;
-
-    color: #17243a;
-
-}
-
-header {
-
-    background: #071a35;
-
-    color: white;
-
-    padding: 20px 6%;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 15px;
-
-}
-
-.logo {
-
-    font-size: 22px;
-
-    font-weight: bold;
-
-    letter-spacing: 1px;
-
-}
-
-.logo span {
-
-    color: #d6ad55;
-
-}
-
-nav {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 16px;
-
-}
-
-nav a {
-
-    color: #e9edf5;
-
-    text-decoration: none;
-
-    font-size: 13px;
-
-}
-
-nav a:hover {
-
-    color: #e4bd68;
-
-}
-
-.container {
-
-    width: 90%;
-
-    max-width: 1100px;
-
-    margin: 35px auto;
-
-}
-
-.page-heading {
-
-    margin-bottom: 25px;
-
-}
-
-.page-heading h1 {
-
-    font-size: 27px;
-
-    margin-bottom: 8px;
-
-}
-
-.page-heading p {
-
-    color: #788397;
-
-    font-size: 14px;
-
-}
-
-.statement-card {
-
-    background: white;
-
-    padding: 28px;
-
-    border-radius: 13px;
-
-    border: 1px solid #e8ebf1;
-
-    box-shadow: 0 4px 18px rgba(10,30,60,.05);
-
-}
-
-.statement-top {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    flex-wrap: wrap;
-
-    gap: 20px;
-
-    padding-bottom: 25px;
-
-    border-bottom: 1px solid #e8ebf1;
-
-}
-
-.statement-top h2 {
-
-    font-size: 20px;
-
-    margin-bottom: 9px;
-
-}
-
-.statement-top p {
-
-    font-size: 13px;
-
-    color: #788397;
-
-    line-height: 1.8;
-
-}
-
-.period {
-
-    text-align: right;
-
-}
-
-.period strong {
-
-    display: block;
-
-    margin-top: 8px;
-
-    color: #b18a3e;
-
-}
-
-.summary {
-
-    display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-
-    gap: 15px;
-
-    margin: 25px 0;
-
-}
-
-.summary-card {
-
-    padding: 19px;
-
-    background: #f6f8fb;
-
-    border-radius: 10px;
-
-    border-left: 3px solid #d6ad55;
-
-}
-
-.summary-card p {
-
-    color: #788397;
-
-    font-size: 12px;
-
-    margin-bottom: 10px;
-
-}
-
-.summary-card h3 {
-
-    font-size: 21px;
-
-}
-
-.summary-card.closing {
-
-    background: #09264b;
-
-    color: white;
-
-}
-
-.summary-card.closing p {
-
-    color: #d4dce8;
-
-}
-
-.table-heading {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 15px;
-
-    margin: 30px 0 18px;
-
-}
-
-.table-heading h2 {
-
-    font-size: 18px;
-
-}
-
-.search {
-
-    padding: 10px 13px;
-
-    border: 1px solid #dce1e9;
-
-    border-radius: 7px;
-
-    font-size: 13px;
-
-    width: 220px;
-
-    max-width: 100%;
-
-}
-
-.table-wrap {
-
-    overflow-x: auto;
-
-}
-
-table {
-
-    width: 100%;
-
-    border-collapse: collapse;
-
-    min-width: 720px;
-
-}
-
-th {
-
-    text-align: left;
-
-    color: #788397;
-
-    font-size: 12px;
-
-    padding: 14px 10px;
-
-    border-bottom: 1px solid #e8ebf1;
-
-}
-
-td {
-
-    padding: 16px 10px;
-
-    border-bottom: 1px solid #edf0f4;
-
-    font-size: 13px;
-
-}
-
-.credit {
-
-    color: #13845b;
-
-    font-weight: bold;
-
-}
-
-.debit {
-
-    color: #bd4d4d;
-
-    font-weight: bold;
-
-}
-
-.status {
-
-    background: #e7f5ee;
-
-    color: #13845b;
-
-    padding: 6px 10px;
-
-    border-radius: 20px;
-
-    font-size: 11px;
-
-    font-weight: bold;
-
-}
-
-footer {
-
-    text-align: center;
-
-    padding: 25px;
-
-    color: #8993a3;
-
-    font-size: 12px;
-
-    margin-top: 35px;
-
-}
-
-@media(max-width: 600px) {
-
-    header {
-
-        align-items: flex-start;
-
-    }
-
-    nav {
-
-        gap: 12px;
-
-    }
-
-    .container {
-
-        width: 92%;
-
-        margin-top: 25px;
-
-    }
-
-    .statement-card {
-
-        padding: 18px;
-
-    }
-
-    .page-heading h1 {
-
-        font-size: 23px;
-
-    }
-
-    .period {
-
-        text-align: left;
-
-    }
-
-    .search {
-
-        width: 100%;
-
-    }
-
-}
-
 </style>
-
 </head>
 
 <body>
 
 <header>
-
-    <div class="logo">OAKBRIDGE <span>FINANCIAL</span></div>
-
-    <nav>
-
-        <a href="index.html">Home</a>
-
-        <a href="dashboard.html">Dashboard</a>
-
-        <a href="transfers.html">Transfers</a>
-
-        <a href="statements.html">Statements</a>
-
-        <a href="profile.html">Profile</a>
-
-        <a href="contact.html">Contact</a>
-
-        <a href="login.html">Logout</a>
-
-    </nav>
-
+<div class="logo">OAKBRIDGE</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="profile.html">Profile</a>
+<a href="transfers.html">Transfers</a>
+<a href="statements.html">Statements</a>
+<a href="contact.html">Contact</a>
+</nav>
 </header>
 
 <main class="container">
 
-    <section class="page-heading">
-
-        <h1>Account Statements</h1>
-
-        <p>Review your account activity and statement summary.</p>
-
-    </section>
-
-    <section class="statement-card">
-
-        <div class="statement-top">
-
-            <div>
-
-                <h2>Oakbridge Financial Bank</h2>
-
-                <p>
-
-                    Account Holder: Gretchen King<br>
-
-                    Account Type: Personal Checking<br>
-
-                    Account Number: *****4821<br>
-
-                    Currency: USD - US Dollar
-
-                </p>
-
-            </div>
-
-            <div class="period">
-
-                <p>STATEMENT PERIOD</p>
-
-                <strong>November 1 – 30, 2026</strong>
-
-            </div>
-
-        </div>
-
-        <section class="summary">
-
-            <div class="summary-card">
-
-                <p>Opening Balance</p>
-
-                <h3>$44,000.00</h3>
-
-            </div>
-
-            <div class="summary-card">
-
-                <p>Total Credits</p>
-
-                <h3 class="credit">$6,000.00</h3>
-
-            </div>
-
-            <div class="summary-card">
-
-                <p>Total Debits</p>
-
-                <h3 class="debit">$4,000.00</h3>
-
-            </div>
-
-            <div class="summary-card closing">
-
-                <p>Closing Balance</p>
-
-                <h3>$46,000.00</h3>
-
-            </div>
-
-        </section>
-
-        <div class="table-heading">
-
-            <h2>Transaction History</h2>
-
-            <input
-
-                type="search"
-
-                class="search"
-
-                id="statementSearch"
-
-                placeholder="Search transactions..."
-
-                onkeyup="filterStatement()"
-
-            >
-
-        </div>
-
-        <div class="table-wrap">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>Date</th>
-
-                        <th>Description</th>
-
-                        <th>Reference ID</th>
-
-                        <th>Debit</th>
-
-                        <th>Credit</th>
-
-                        <th>Balance</th>
-
-                        <th>Status</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody id="statementRows">
-
-                    <tr>
-
-                        <td>Nov 03, 2026</td>
-
-                        <td>Grocery Store Purchase</td>
-
-                        <td>OBK203841</td>
-
-                        <td class="debit">$200.00</td>
-
-                        <td>—</td>
-
-                        <td>$43,800.00</td>
-
-                        <td><span class="status">Completed</span></td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Nov 06, 2026</td>
-
-                        <td>Electricity Bill Payment</td>
-
-                        <td>OBK203842</td>
-
-                        <td class="debit">$300.00</td>
-
-                        <td>—</td>
-
-                        <td>$43,500.00</td>
-
-                        <td><span class="status">Completed</span></td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Nov 10, 2026</td>
-
-                        <td>Incoming Account Credit</td>
-
-                        <td>OBK203843</td>
-
-                        <td>—</td>
-
-                        <td class="credit">$1,000.00</td>
-
-                        <td>$44,500.00</td>
-
-                        <td><span class="status">Completed</span></td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Nov 12, 2026</td>
-
-                        <td>Utility Payment</td>
-
-                        <td>OBK203844</td>
-
-                        <td class="debit">$500.00</td>
-
-                        <td>—</td>
-
-                        <td>$44,000.00</td>
-
-                        <td><span class="status">Completed</span></td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Nov 14, 2026</td>
-
-                        <td>Incoming Account Credit</td>
-
-                        <td>OBK203845</td>
-
-                        <td>—</td>
-
-                        <td class="credit">$2,000.00</td>
-
-                        <td>$46,000.00</td>
-
-                        <td><span class="status">Completed</span></td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Nov 18, 2026</td>
-
-                        <td>Restaurant Payment</td>
-
-                        <td>OBK203846</td>
-
-                        <td class="debit">$250.00</td>
-
-                        <td>—</td>
-
-                        <td>$45,750.00</td>
-
-                        <td><span class="status">Completed</span></td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Nov 22, 2026</td>
-
-                        <td>Incoming Account Credit</td>
-
-                        <td>OBK203847</td>
-
-                        <td>—</td>
-
-                        <td class="credit">$3,000.00</td>
-
-                        <td>$48,750.00</td>
-
-                        <td><span class="status">Completed</span></td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Nov 25, 2026</td>
-
-                        <td>Shopping Purchase</td>
-
-                        <td>OBK203848</td>
-
-                        <td class="debit">$750.00</td>
-
-                        <td>—</td>
-
-                        <td>$48,000.00</td>
-
-                        <td><span class="status">Completed</span></td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Nov 28, 2026</td>
-
-                        <td>Online Payment</td>
-
-                        <td>OBK203849</td>
-
-                        <td class="debit">$1,000.00</td>
-
-                        <td>—</td>
-
-                        <td>$47,000.00</td>
-
-                        <td><span class="status">Completed</span></td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Nov 30, 2026</td>
-
-                        <td>Monthly Service Payment</td>
-
-                        <td>OBK203850</td>
-
-                        <td class="debit">$1,000.00</td>
-
-                        <td>—</td>
-
-                        <td>$46,000.00</td>
-
-                        <td><span class="status">Completed</span></td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </section>
+<h1>Account Statements</h1>
+<p class="subtitle">Account overview for Gretchel King.</p>
+
+<section class="card">
+<h2>Account Balance Summary</h2>
+
+<div class="balances">
+<div class="balance">
+<p>Personal Checking</p>
+<div class="amount">$50,000.00</div>
+</div>
+
+<div class="balance">
+<p>Personal Savings</p>
+<div class="amount">$100,000.00</div>
+</div>
+
+<div class="balance total">
+<p>Combined Balance</p>
+<div class="amount">$150,000.00</div>
+</div>
+</div>
+</section>
+
+<section class="card">
+<h2>Account Information</h2>
+
+<div class="details">
+<div>
+<div class="label">Account Holder</div>
+<div class="value">Gretchel King</div>
+</div>
+
+<div>
+<div class="label">Currency</div>
+<div class="value">US Dollar (USD)</div>
+</div>
+
+<div>
+<div class="label">Checking Account</div>
+<div class="value">*****4821</div>
+</div>
+
+<div>
+<div class="label">Savings Account</div>
+<div class="value">*****7396</div>
+</div>
+</div>
+</section>
 
 </main>
 
-<footer>
-
-    © 2026 Oakbridge Financial Bank
-
-</footer>
-
-<script>
-
-function filterStatement() {
-
-    const input = document.getElementById("statementSearch");
-
-    const filter = input.value.toLowerCase();
-
-    const rows = document.querySelectorAll("#statementRows tr");
-
-    rows.forEach(row => {
-
-        row.style.display =
-
-            row.textContent.toLowerCase().includes(filter)
-
-            ? ""
-
-            : "none";
-
-    });
-
-}
-
-</script>
+<footer>© 2026 Oakbridge Financial Bank</footer>
 
 </body>
-
 </html>
