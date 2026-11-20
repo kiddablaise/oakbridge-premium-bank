@@ -10,457 +10,271 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dashboard | Oakbridge Financial Bank</title>
+<title>Oakbridge Financial Bank | Dashboard</title>
 
 <style>
 
 * {
 
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    margin: 0;
+  margin: 0;
 
-    padding: 0;
+  padding: 0;
 
 }
 
 body {
 
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
 
-    background: #f3f5f9;
+  background: #f3f5f9;
 
-    color: #17243a;
+  color: #182b45;
 
 }
 
 header {
 
-    background: #071a35;
+  background: #102b50;
 
-    color: white;
+  color: white;
 
-    padding: 20px 6%;
+  padding: 22px 6%;
 
-    display: flex;
+  display: flex;
 
-    justify-content: space-between;
+  justify-content: space-between;
 
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 15px;
+  align-items: center;
 
 }
 
-.logo {
+.brand {
 
-    font-size: 22px;
+  font-size: 20px;
 
-    font-weight: bold;
+  font-weight: bold;
 
-    letter-spacing: 1px;
-
-}
-
-.logo span {
-
-    color: #d6ad55;
+  letter-spacing: .5px;
 
 }
 
-nav {
+main {
 
-    display: flex;
+  max-width: 1150px;
 
-    flex-wrap: wrap;
+  margin: 40px auto;
 
-    gap: 17px;
-
-}
-
-nav a {
-
-    color: #e9edf5;
-
-    text-decoration: none;
-
-    font-size: 13px;
-
-}
-
-nav a:hover {
-
-    color: #e4bd68;
-
-}
-
-.container {
-
-    width: 90%;
-
-    max-width: 1150px;
-
-    margin: 35px auto;
+  padding: 0 22px;
 
 }
 
 .welcome {
 
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    flex-wrap: wrap;
-
-    gap: 15px;
-
-    margin-bottom: 28px;
+  margin-bottom: 28px;
 
 }
 
 .welcome h1 {
 
-    font-size: 27px;
+  font-size: 28px;
 
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 
 }
 
 .welcome p {
 
-    color: #778196;
-
-    font-size: 14px;
-
-}
-
-.date {
-
-    color: #69768a;
-
-    font-size: 13px;
-
-}
-
-.section-title {
-
-    font-size: 18px;
-
-    margin: 28px 0 16px;
+  color: #748196;
 
 }
 
 .accounts {
 
-    display: grid;
+  display: grid;
 
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
 
-    gap: 20px;
-
-}
-
-.account-card {
-
-    background: white;
-
-    padding: 25px;
-
-    border-radius: 13px;
-
-    box-shadow: 0 4px 18px rgba(10, 30, 60, 0.06);
-
-    border: 1px solid #e8ebf1;
+  gap: 20px;
 
 }
 
-.account-card.primary {
+.card {
 
-    background: linear-gradient(135deg, #09264b, #164575);
+  background: white;
 
-    color: white;
+  border-radius: 12px;
+
+  padding: 25px;
+
+  box-shadow: 0 3px 12px rgba(0,0,0,.04);
 
 }
 
-.account-label {
+.card p {
 
-    font-size: 13px;
+  color: #718096;
 
-    opacity: .8;
+  font-size: 14px;
 
-    margin-bottom: 18px;
+  margin-bottom: 17px;
 
 }
 
 .balance {
 
-    font-size: 29px;
+  font-size: 27px;
 
-    font-weight: bold;
-
-    margin-bottom: 17px;
+  font-weight: bold;
 
 }
 
-.account-number {
+.total {
 
-    font-size: 13px;
+  background: #102b50;
 
-    opacity: .8;
-
-}
-
-.account-type {
-
-    font-size: 12px;
-
-    color: #d3ad60;
-
-    margin-top: 12px;
-
-    font-weight: bold;
+  color: white;
 
 }
 
-.quick-actions {
+.total p {
 
-    display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-
-    gap: 15px;
+  color: #d4dfed;
 
 }
 
-.action {
+.history {
 
-    background: white;
+  background: white;
 
-    border: 1px solid #e8ebf1;
+  margin-top: 30px;
 
-    padding: 20px 12px;
+  border-radius: 12px;
 
-    border-radius: 12px;
+  padding: 25px;
 
-    text-align: center;
-
-    text-decoration: none;
-
-    color: #17243a;
-
-    font-size: 14px;
-
-    font-weight: bold;
-
-    box-shadow: 0 3px 12px rgba(10,30,60,.04);
+  box-shadow: 0 3px 12px rgba(0,0,0,.04);
 
 }
 
-.action:hover {
+.history h2 {
 
-    border-color: #d6ad55;
+  font-size: 20px;
 
-    transform: translateY(-2px);
-
-}
-
-.action-icon {
-
-    display: block;
-
-    font-size: 25px;
-
-    margin-bottom: 10px;
-
-}
-
-.activity-box {
-
-    background: white;
-
-    border: 1px solid #e8ebf1;
-
-    border-radius: 13px;
-
-    padding: 22px;
-
-    box-shadow: 0 4px 18px rgba(10,30,60,.05);
-
-}
-
-.activity-heading {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    gap: 12px;
-
-    flex-wrap: wrap;
-
-    margin-bottom: 18px;
-
-}
-
-.activity-heading h2 {
-
-    font-size: 18px;
-
-}
-
-.search {
-
-    padding: 10px 13px;
-
-    border: 1px solid #dce1e9;
-
-    border-radius: 7px;
-
-    width: 220px;
-
-    max-width: 100%;
-
-    font-size: 13px;
+  margin-bottom: 22px;
 
 }
 
 .table-wrap {
 
-    overflow-x: auto;
+  overflow-x: auto;
 
 }
 
 table {
 
-    width: 100%;
+  width: 100%;
 
-    border-collapse: collapse;
+  border-collapse: collapse;
 
-    min-width: 650px;
+  min-width: 750px;
 
 }
 
 th {
 
-    text-align: left;
+  text-align: left;
 
-    color: #788397;
+  background: #f5f7fa;
 
-    font-size: 12px;
+  color: #66758a;
 
-    padding: 14px 10px;
+  padding: 16px 13px;
 
-    border-bottom: 1px solid #e8ebf1;
+  font-size: 12px;
+
+  text-transform: uppercase;
+
+  letter-spacing: .5px;
 
 }
 
 td {
 
-    padding: 16px 10px;
+  padding: 19px 13px;
 
-    border-bottom: 1px solid #edf0f4;
+  border-bottom: 1px solid #edf0f4;
 
-    font-size: 13px;
+  font-size: 14px;
 
-}
-
-.credit {
-
-    color: #13845b;
-
-    font-weight: bold;
+  white-space: nowrap;
 
 }
 
-.debit {
+.amount {
 
-    color: #bd4d4d;
+  color: #16834b;
 
-    font-weight: bold;
+  font-weight: bold;
 
 }
 
 .status {
 
-    color: #13845b;
+  display: inline-block;
 
-    background: #e7f5ee;
+  background: #e7f6ed;
 
-    padding: 6px 10px;
+  color: #16834b;
 
-    border-radius: 20px;
+  padding: 7px 12px;
 
-    font-size: 11px;
+  border-radius: 20px;
 
-    font-weight: bold;
+  font-size: 12px;
+
+  font-weight: bold;
 
 }
 
 footer {
 
-    text-align: center;
+  text-align: center;
 
-    padding: 25px;
+  color: #8490a0;
 
-    color: #8993a3;
+  font-size: 12px;
 
-    font-size: 12px;
-
-    margin-top: 35px;
+  padding: 25px;
 
 }
 
-@media(max-width: 600px) {
+@media(max-width: 750px) {
 
-    header {
+  .accounts {
 
-        align-items: flex-start;
+    grid-template-columns: 1fr;
 
-    }
+  }
 
-    nav {
+  header {
 
-        gap: 12px;
+    padding: 20px;
 
-    }
+  }
 
-    .container {
+  .brand {
 
-        width: 92%;
+    font-size: 16px;
 
-        margin-top: 25px;
+  }
 
-    }
+  main {
 
-    .welcome h1 {
+    margin-top: 28px;
 
-        font-size: 23px;
-
-    }
-
-    .balance {
-
-        font-size: 26px;
-
-    }
-
-    .activity-box {
-
-        padding: 15px;
-
-    }
-
-    .search {
-
-        width: 100%;
-
-    }
+  }
 
 }
 
@@ -472,271 +286,121 @@ footer {
 
 <header>
 
-    <div class="logo">OAKBRIDGE <span>FINANCIAL</span></div>
+  <div class="brand">OAKBRIDGE FINANCIAL BANK</div>
 
-    <nav>
-
-        <a href="index.html">Home</a>
-
-        <a href="dashboard.html">Dashboard</a>
-
-        <a href="transfers.html">Transfers</a>
-
-        <a href="statements.html">Statements</a>
-
-        <a href="profile.html">Profile</a>
-
-        <a href="contact.html">Contact</a>
-
-        <a href="login.html">Logout</a>
-
-    </nav>
+  <div>Account Dashboard</div>
 
 </header>
 
-<main class="container">
+<main>
 
-    <section class="welcome">
+  <div class="welcome">
 
-        <div>
+    <h1>Welcome, Gretchel King</h1>
 
-            <h1>Welcome Back, Gretchen King</h1>
+    <p>Here's your account overview.</p>
 
-            <p>Here is an overview of your accounts.</p>
+  </div>
 
-        </div>
+  <section class="accounts">
 
-        <div class="date">Account Overview</div>
+    <div class="card total">
 
-    </section>
+      <p>Combined Balance</p>
 
-    <h2 class="section-title">My Accounts</h2>
+      <div class="balance">$150,000.00</div>
 
-    <section class="accounts">
+    </div>
 
-        <div class="account-card primary">
+    <div class="card">
 
-            <div class="account-label">PERSONAL CHECKING</div>
+      <p>Checking Account</p>
 
-            <div class="balance">$50,000.00</div>
+      <div class="balance">$50,000.00</div>
 
-            <div class="account-number">Account Number: *****4821</div>
+    </div>
 
-            <div class="account-type">CHECKING ACCOUNT</div>
+    <div class="card">
 
-        </div>
+      <p>Savings Account</p>
 
-        <div class="account-card">
+      <div class="balance">$100,000.00</div>
 
-            <div class="account-label">PERSONAL SAVINGS</div>
+    </div>
 
-            <div class="balance">$100,000.00</div>
+  </section>
 
-            <div class="account-number">Account Number: *****7396</div>
+  <section class="history">
 
-            <div class="account-type">SAVINGS ACCOUNT</div>
+    <h2>Transaction History</h2>
 
-        </div>
+    <div class="table-wrap">
 
-    </section>
+      <table>
 
-    <h2 class="section-title">Quick Services</h2>
+        <thead>
 
-    <section class="quick-actions">
+          <tr>
 
-        <a class="action" href="transfers.html">
+            <th>Date</th>
 
-            <span class="action-icon">↗</span>
+            <th>Description</th>
 
-            Transfers
+            <th>Reference</th>
 
-        </a>
+            <th>Amount</th>
 
-        <a class="action" href="statements.html">
+            <th>Status</th>
 
-            <span class="action-icon">▤</span>
+          </tr>
 
-            Statements
+        </thead>
 
-        </a>
+        <tbody>
 
-        <a class="action" href="profile.html">
+          <tr>
 
-            <span class="action-icon">♙</span>
+            <td>Nov 10, 2026</td>
 
-            My Profile
+            <td>Incoming Account Credit</td>
 
-        </a>
+            <td>OBK203843</td>
 
-        <a class="action" href="contact.html">
+            <td class="amount">+$50,000.00</td>
 
-            <span class="action-icon">✉</span>
+            <td><span class="status">Completed</span></td>
 
-            Contact Support
+          </tr>
 
-        </a>
+          <tr>
 
-    </section>
+            <td>Nov 14, 2026</td>
 
-    <h2 class="section-title">Recent Account Activity</h2>
+            <td>Incoming Account Credit</td>
 
-    <section class="activity-box">
+            <td>OBK203845</td>
 
-        <div class="activity-heading">
+            <td class="amount">+$100,000.00</td>
 
-            <h2>Recent Transactions</h2>
+            <td><span class="status">Completed</span></td>
 
-            <input
+          </tr>
 
-                class="search"
+        </tbody>
 
-                type="search"
+      </table>
 
-                id="transactionSearch"
+    </div>
 
-                placeholder="Search transactions..."
-
-                onkeyup="filterTransactions()"
-
-            >
-
-        </div>
-
-        <div class="table-wrap">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>Date</th>
-
-                        <th>Description</th>
-
-                        <th>Reference ID</th>
-
-                        <th>Amount</th>
-
-                        <th>Status</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody id="transactionRows">
-
-                    <tr>
-
-                        <td>Nov 03, 2026</td>
-
-                        <td>Grocery Store Purchase</td>
-
-                        <td>OBK203841</td>
-
-                        <td class="debit">-$200.00</td>
-
-                        <td><span class="status">Completed</span></td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Nov 06, 2026</td>
-
-                        <td>Electricity Bill Payment</td>
-
-                        <td>OBK203842</td>
-
-                        <td class="debit">-$300.00</td>
-
-                        <td><span class="status">Completed</span></td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Nov 10, 2026</td>
-
-                        <td>Incoming Account Credit</td>
-
-                        <td>OBK203843</td>
-
-                        <td class="credit">+$1,000.00</td>
-
-                        <td><span class="status">Completed</span></td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Nov 12, 2026</td>
-
-                        <td>Utility Payment</td>
-
-                        <td>OBK203844</td>
-
-                        <td class="debit">-$500.00</td>
-
-                        <td><span class="status">Completed</span></td>
-
-                    </tr>
-
-                    <tr>
-
-                        <td>Nov 14, 2026</td>
-
-                        <td>Incoming Account Credit</td>
-
-                        <td>OBK203845</td>
-
-                        <td class="credit">+$2,000.00</td>
-
-                        <td><span class="status">Completed</span></td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </section>
+  </section>
 
 </main>
 
 <footer>
 
-    © 2026 Oakbridge Financial Bank
+  © 2026 Oakbridge Financial Bank · Fictional demonstration
 
 </footer>
-
-<script>
-
-function filterTransactions() {
-
-    const input = document.getElementById("transactionSearch");
-
-    const filter = input.value.toLowerCase();
-
-    const rows = document.querySelectorAll("#transactionRows tr");
-
-    rows.forEach(row => {
-
-        row.style.display =
-
-            row.textContent.toLowerCase().includes(filter)
-
-            ? ""
-
-            : "none";
-
-    });
-
-}
-
-</script>
 
 </body>
 
