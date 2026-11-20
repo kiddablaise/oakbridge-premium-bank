@@ -4,58 +4,85 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oakbridge Financial Bank | Contact Us</title>
+<title>Contact Us | Oakbridge Financial Bank</title>
+
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#f3f5f9;color:#17243b;font-family:Arial,sans-serif}
-header{background:#071b3a;color:white;padding:20px 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
-.brand{font-size:20px;font-weight:bold;letter-spacing:1px}
-nav{display:flex;gap:15px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none;font-size:13px}
-main{max-width:950px;margin:35px auto;padding:0 18px}
-h1{font-size:28px;margin-bottom:8px}
-.muted{color:#718096;font-size:14px;line-height:1.6}
-.contact-card{background:white;border:1px solid #e2e7ef;border-radius:12px;padding:27px;margin-top:25px;box-shadow:0 4px 15px #1020400b}
-h2{font-size:19px;color:#09234a}
-.email{display:inline-block;margin-top:10px;color:#09234a;font-size:16px;font-weight:bold;text-decoration:none;overflow-wrap:anywhere}
-.email:hover{text-decoration:underline}
-.hours{margin-top:25px;padding-top:18px;border-top:1px solid #edf0f5}
-footer{text-align:center;padding:30px;color:#718096;font-size:12px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f4f6fa;color:#17243b}
+header{background:#071b3a;padding:22px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.logo{font-size:21px;font-weight:bold;color:#e5bd62}
+nav{display:flex;flex-wrap:wrap;gap:18px}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:#e5bd62}
+.container{max-width:900px;margin:50px auto;padding:0 20px}
+h1{color:#071b3a;margin-bottom:10px}
+.subtitle{color:#718096;line-height:1.6;margin-bottom:30px}
+.card{background:white;padding:32px;border-radius:13px;box-shadow:0 6px 25px rgba(0,0,0,.06);margin-bottom:22px}
+h2{color:#071b3a;font-size:19px;margin-bottom:20px}
+.contact-item{padding:20px 0;border-bottom:1px solid #e8edf3}
+.contact-item:last-child{border-bottom:none}
+.label{color:#8290a3;font-size:13px;margin-bottom:8px}
+.value{color:#17243b;font-weight:bold;font-size:15px;overflow-wrap:anywhere}
+.value a{color:#17243b;text-decoration:none}
+.value a:hover{color:#b18b38}
+.hours{color:#526178;font-size:14px;line-height:1.7}
+footer{text-align:center;padding:25px;color:#718096;font-size:13px}
+@media(max-width:600px){
+header{padding:20px}
+.container{margin:30px auto}
+.card{padding:23px}
+}
 </style>
 </head>
+
 <body>
+
 <header>
-<div class="brand">OAKBRIDGE FINANCIAL BANK</div>
+<div class="logo">OAKBRIDGE</div>
 <nav>
 <a href="index.html">Home</a>
 <a href="dashboard.html">Dashboard</a>
+<a href="profile.html">Profile</a>
 <a href="transfers.html">Transfers</a>
 <a href="statements.html">Statements</a>
-<a href="profile.html">Profile</a>
 <a href="contact.html">Contact</a>
-<a href="login.html">Logout</a>
 </nav>
 </header>
 
-<main>
+<main class="container">
+
 <h1>Contact Us</h1>
-<p class="muted">We're here to help. Reach out to our customer support team by email.</p>
+<p class="subtitle">
+We're here to help. Reach out to our customer support team for assistance and general enquiries.
+</p>
 
-<div class="contact-card">
+<section class="card">
 <h2>Customer Support</h2>
-<p class="muted">For enquiries and assistance, please contact us using the email address below.</p>
 
-<a class="email" href="mailto:oakbridgefinancialbank.org@gmail.com">
+<div class="contact-item">
+<div class="label">Email Address</div>
+<div class="value">
+<a href="mailto:oakbridgefinancialbank.org@gmail.com">
 oakbridgefinancialbank.org@gmail.com
 </a>
+</div>
+</div>
 
+<div class="contact-item">
+<div class="label">Office Hours</div>
 <div class="hours">
-<h2>Office Hours</h2>
-<p class="muted">Monday – Friday<br>9:00 AM – 5:00 PM</p>
+Monday – Friday<br>
+9:00 AM – 5:00 PM
 </div>
 </div>
+
+</section>
+
 </main>
 
-<footer>Oakbridge Financial Bank</footer>
+<footer>
+© 2026 Oakbridge Financial Bank
+</footer>
+
 </body>
 </html>
