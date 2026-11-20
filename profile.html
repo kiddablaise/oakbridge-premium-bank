@@ -4,94 +4,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oakbridge Financial Bank | Profile</title>
+<title>My Profile | Oakbridge Financial Bank</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#f3f5f9;color:#182b45}
-header{background:#102b50;color:white;padding:22px 6%;display:flex;justify-content:space-between;align-items:center}
-.brand{font-size:19px;font-weight:bold}
-header a{color:white;text-decoration:none;font-size:14px}
-main{max-width:850px;margin:40px auto;padding:0 20px}
-h1{font-size:27px;margin-bottom:8px}
-.subtitle{color:#718096;margin-bottom:25px}
-.profile-card{background:white;border-radius:12px;padding:28px;box-shadow:0 3px 12px #00000009}
-.avatar{width:75px;height:75px;border-radius:50%;background:#e7edf6;color:#102b50;display:flex;align-items:center;justify-content:center;font-size:27px;font-weight:bold;margin-bottom:18px}
-.name{font-size:22px;font-weight:bold;margin-bottom:6px}
-.member{font-size:13px;color:#718096;margin-bottom:25px}
-.section-title{font-size:17px;margin:22px 0 16px;padding-bottom:12px;border-bottom:1px solid #e9edf2}
-.details{display:grid;grid-template-columns:1fr 1fr;gap:23px}
-.field label{display:block;color:#718096;font-size:12px;margin-bottom:8px}
-.field p{font-size:15px;font-weight:600}
-footer{text-align:center;padding:25px;color:#8490a0;font-size:12px}
-@media(max-width:600px){.details{grid-template-columns:1fr}.profile-card{padding:22px}}
+body{font-family:Arial,sans-serif;background:#f4f6fa;color:#17243b}
+header{background:#071b3a;padding:22px 7%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:15px}
+.logo{font-size:21px;font-weight:bold;color:#e5bd62}
+nav{display:flex;flex-wrap:wrap;gap:18px}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:#e5bd62}
+.container{max-width:950px;margin:45px auto;padding:0 20px}
+.heading{margin-bottom:25px}
+.heading h1{color:#071b3a;margin-bottom:8px}
+.heading p{color:#718096}
+.card{background:white;padding:30px;border-radius:13px;box-shadow:0 6px 25px rgba(0,0,0,.06);margin-bottom:22px}
+.person{display:flex;align-items:center;gap:18px}
+.avatar{width:65px;height:65px;border-radius:50%;background:#071b3a;color:#e5bd62;display:flex;align-items:center;justify-content:center;font-size:23px;font-weight:bold}
+.person h2{font-size:21px;color:#071b3a;margin-bottom:5px}
+.person p{color:#718096;font-size:14px}
+h3{color:#071b3a;margin-bottom:22px}
+.details{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.label{font-size:12px;color:#8290a3;margin-bottom:7px}
+.value{font-weight:bold;color:#24334b;font-size:15px;overflow-wrap:anywhere}
+.account{border:1px solid #e2e7ef;padding:20px;border-radius:9px;margin-top:14px}
+.account strong{color:#071b3a}
+.account p{margin-top:8px;color:#718096;font-size:14px}
+footer{text-align:center;padding:25px;color:#718096;font-size:13px}
+@media(max-width:600px){header{padding:20px}.details{grid-template-columns:1fr}.card{padding:22px}.container{margin:30px auto}}
 </style>
 </head>
 <body>
 
 <header>
-<div class="brand">OAKBRIDGE FINANCIAL BANK</div>
-<a href="dashboard.html">Back to Dashboard</a>
+<div class="logo">OAKBRIDGE</div>
+<nav>
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="profile.html">Profile</a>
+<a href="transfers.html">Transfers</a>
+<a href="statements.html">Statements</a>
+<a href="contact.html">Contact</a>
+</nav>
 </header>
 
-<main>
+<main class="container">
+<div class="heading">
 <h1>My Profile</h1>
-<p class="subtitle">View your personal account information.</p>
+<p>View your personal banking profile and account details.</p>
+</div>
 
-<div class="profile-card">
-
+<section class="card">
+<div class="person">
 <div class="avatar">GK</div>
-<div class="name">Gretchel King</div>
-<div class="member">Account Profile</div>
+<div>
+<h2>Gretchen King</h2>
+<p>Personal Banking Customer</p>
+</div>
+</div>
+</section>
 
-<h2 class="section-title">Personal Information</h2>
-
+<section class="card">
+<h3>Personal Information</h3>
 <div class="details">
-<div class="field">
-<label>Full Name</label>
-<p>Gretchel King</p>
+<div>
+<div class="label">Full Name</div>
+<div class="value">Gretchen King</div>
 </div>
+<div>
+<div class="label">Account Number</div>
+<div class="value">8472916305</div>
+</div>
+<div>
+<div class="label">Currency</div>
+<div class="value">USD ($)</div>
+</div>
+<div>
+<div class="label">Customer Category</div>
+<div class="value">Personal Banking</div>
+</div>
+</div>
+</section>
 
-<div class="field">
-<label>Account Holder</label>
-<p>Gretchel King</p>
+<section class="card">
+<h3>My Accounts</h3>
+<div class="account">
+<strong>Checking Account</strong>
+<p>Personal Checking</p>
 </div>
-
-<div class="field">
-<label>Bank</label>
-<p>Oakbridge Financial Bank</p>
+<div class="account">
+<strong>Savings Account</strong>
+<p>Personal Savings</p>
 </div>
-
-<div class="field">
-<label>Account Type</label>
-<p>Personal Banking</p>
-</div>
-</div>
-
-<h2 class="section-title">Account Information</h2>
-
-<div class="details">
-<div class="field">
-<label>Checking Balance</label>
-<p>$50,000.00</p>
-</div>
-
-<div class="field">
-<label>Savings Balance</label>
-<p>$100,000.00</p>
-</div>
-
-<div class="field">
-<label>Combined Balance</label>
-<p>$150,000.00</p>
-</div>
-</div>
-
-</div>
+</section>
 </main>
 
-<footer>
-© 2026 Oakbridge Financial Bank · Fictional demonstration
-</footer>
-
+<footer>© 2026 Oakbridge Financial Bank</footer>
 </body>
 </html>
