@@ -1,407 +1,286 @@
 
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Oakbridge Financial Bank | Dashboard</title>
 
 <style>
+*{box-sizing:border-box;margin:0;padding:0}
 
-* {
-
-  box-sizing: border-box;
-
-  margin: 0;
-
-  padding: 0;
-
+body{
+font-family:Arial,sans-serif;
+background:#f4f6fa;
+color:#17243b;
 }
 
-body {
-
-  font-family: Arial, sans-serif;
-
-  background: #f3f5f9;
-
-  color: #182b45;
-
+header{
+background:#071b3a;
+padding:22px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:18px;
 }
 
-header {
-
-  background: #102b50;
-
-  color: white;
-
-  padding: 22px 6%;
-
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
+.brand{
+font-size:20px;
+font-weight:bold;
+letter-spacing:.5px;
+color:#e5bd62;
 }
 
-.brand {
-
-  font-size: 20px;
-
-  font-weight: bold;
-
-  letter-spacing: .5px;
-
+nav{
+display:flex;
+flex-wrap:wrap;
+gap:18px;
 }
 
-main {
-
-  max-width: 1150px;
-
-  margin: 40px auto;
-
-  padding: 0 22px;
-
+nav a{
+color:white;
+text-decoration:none;
+font-size:14px;
 }
 
-.welcome {
-
-  margin-bottom: 28px;
-
+nav a:hover{
+color:#e5bd62;
 }
 
-.welcome h1 {
-
-  font-size: 28px;
-
-  margin-bottom: 8px;
-
+main{
+max-width:1150px;
+margin:40px auto;
+padding:0 22px;
 }
 
-.welcome p {
-
-  color: #748196;
-
+.welcome{
+margin-bottom:28px;
 }
 
-.accounts {
-
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 20px;
-
+.welcome h1{
+font-size:28px;
+margin-bottom:8px;
+color:#071b3a;
 }
 
-.card {
-
-  background: white;
-
-  border-radius: 12px;
-
-  padding: 25px;
-
-  box-shadow: 0 3px 12px rgba(0,0,0,.04);
-
+.welcome p{
+color:#748196;
 }
 
-.card p {
-
-  color: #718096;
-
-  font-size: 14px;
-
-  margin-bottom: 17px;
-
+.accounts{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
 
-.balance {
-
-  font-size: 27px;
-
-  font-weight: bold;
-
+.card{
+background:white;
+border-radius:12px;
+padding:25px;
+box-shadow:0 5px 20px rgba(0,0,0,.05);
+border:1px solid #edf0f4;
 }
 
-.total {
-
-  background: #102b50;
-
-  color: white;
-
+.card p{
+color:#718096;
+font-size:14px;
+margin-bottom:17px;
 }
 
-.total p {
-
-  color: #d4dfed;
-
+.balance{
+font-size:27px;
+font-weight:bold;
+color:#071b3a;
 }
 
-.history {
-
-  background: white;
-
-  margin-top: 30px;
-
-  border-radius: 12px;
-
-  padding: 25px;
-
-  box-shadow: 0 3px 12px rgba(0,0,0,.04);
-
+.total{
+background:#071b3a;
+color:white;
+border:none;
 }
 
-.history h2 {
-
-  font-size: 20px;
-
-  margin-bottom: 22px;
-
+.total p{
+color:#e1e8f2;
 }
 
-.table-wrap {
-
-  overflow-x: auto;
-
+.total .balance{
+color:#e5bd62;
 }
 
-table {
-
-  width: 100%;
-
-  border-collapse: collapse;
-
-  min-width: 750px;
-
+.history{
+background:white;
+margin-top:30px;
+border-radius:12px;
+padding:25px;
+box-shadow:0 5px 20px rgba(0,0,0,.05);
 }
 
-th {
-
-  text-align: left;
-
-  background: #f5f7fa;
-
-  color: #66758a;
-
-  padding: 16px 13px;
-
-  font-size: 12px;
-
-  text-transform: uppercase;
-
-  letter-spacing: .5px;
-
+.history h2{
+font-size:20px;
+color:#071b3a;
+margin-bottom:22px;
 }
 
-td {
-
-  padding: 19px 13px;
-
-  border-bottom: 1px solid #edf0f4;
-
-  font-size: 14px;
-
-  white-space: nowrap;
-
+.table-wrap{
+overflow-x:auto;
 }
 
-.amount {
-
-  color: #16834b;
-
-  font-weight: bold;
-
+table{
+width:100%;
+border-collapse:collapse;
+min-width:750px;
 }
 
-.status {
-
-  display: inline-block;
-
-  background: #e7f6ed;
-
-  color: #16834b;
-
-  padding: 7px 12px;
-
-  border-radius: 20px;
-
-  font-size: 12px;
-
-  font-weight: bold;
-
+th{
+text-align:left;
+background:#f5f7fa;
+color:#66758a;
+padding:16px 13px;
+font-size:12px;
+text-transform:uppercase;
+letter-spacing:.5px;
 }
 
-footer {
-
-  text-align: center;
-
-  color: #8490a0;
-
-  font-size: 12px;
-
-  padding: 25px;
-
+td{
+padding:19px 13px;
+border-bottom:1px solid #edf0f4;
+font-size:14px;
+white-space:nowrap;
 }
 
-@media(max-width: 750px) {
-
-  .accounts {
-
-    grid-template-columns: 1fr;
-
-  }
-
-  header {
-
-    padding: 20px;
-
-  }
-
-  .brand {
-
-    font-size: 16px;
-
-  }
-
-  main {
-
-    margin-top: 28px;
-
-  }
-
+.amount{
+color:#16834b;
+font-weight:bold;
 }
 
+.status{
+display:inline-block;
+background:#e7f6ed;
+color:#16834b;
+padding:7px 12px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+}
+
+footer{
+text-align:center;
+color:#8490a0;
+font-size:12px;
+padding:25px;
+}
+
+@media(max-width:750px){
+.accounts{
+grid-template-columns:1fr;
+}
+
+header{
+padding:20px;
+}
+
+.brand{
+font-size:17px;
+}
+
+main{
+margin-top:28px;
+}
+
+nav{
+gap:13px;
+}
+
+.card{
+padding:22px;
+}
+}
 </style>
-
 </head>
 
 <body>
 
 <header>
+<div class="brand">OAKBRIDGE FINANCIAL BANK</div>
 
-  <div class="brand">OAKBRIDGE FINANCIAL BANK</div>
-
-  <div>Account Dashboard</div>
-
+<nav>
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="profile.html">Profile</a>
+<a href="transfers.html">Transfers</a>
+<a href="statements.html">Statements</a>
+<a href="contact.html">Contact</a>
+</nav>
 </header>
 
 <main>
 
-  <div class="welcome">
+<div class="welcome">
+<h1>Welcome, Gretchel King</h1>
+<p>Here's your account overview.</p>
+</div>
 
-    <h1>Welcome, Gretchel King</h1>
+<section class="accounts">
 
-    <p>Here's your account overview.</p>
+<div class="card total">
+<p>Combined Balance</p>
+<div class="balance">$150,000.00</div>
+</div>
 
-  </div>
+<div class="card">
+<p>Checking Account</p>
+<div class="balance">$50,000.00</div>
+</div>
 
-  <section class="accounts">
+<div class="card">
+<p>Savings Account</p>
+<div class="balance">$100,000.00</div>
+</div>
 
-    <div class="card total">
+</section>
 
-      <p>Combined Balance</p>
+<section class="history">
+<h2>Transaction History</h2>
 
-      <div class="balance">$150,000.00</div>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Description</th>
+<th>Reference</th>
+<th>Amount</th>
+<th>Status</th>
+</tr>
+</thead>
 
-    </div>
+<tbody>
+<tr>
+<td>Nov 10, 2026</td>
+<td>Incoming Account Credit</td>
+<td>OBK203843</td>
+<td class="amount">+$50,000.00</td>
+<td><span class="status">Completed</span></td>
+</tr>
 
-    <div class="card">
-
-      <p>Checking Account</p>
-
-      <div class="balance">$50,000.00</div>
-
-    </div>
-
-    <div class="card">
-
-      <p>Savings Account</p>
-
-      <div class="balance">$100,000.00</div>
-
-    </div>
-
-  </section>
-
-  <section class="history">
-
-    <h2>Transaction History</h2>
-
-    <div class="table-wrap">
-
-      <table>
-
-        <thead>
-
-          <tr>
-
-            <th>Date</th>
-
-            <th>Description</th>
-
-            <th>Reference</th>
-
-            <th>Amount</th>
-
-            <th>Status</th>
-
-          </tr>
-
-        </thead>
-
-        <tbody>
-
-          <tr>
-
-            <td>Nov 10, 2026</td>
-
-            <td>Incoming Account Credit</td>
-
-            <td>OBK203843</td>
-
-            <td class="amount">+$50,000.00</td>
-
-            <td><span class="status">Completed</span></td>
-
-          </tr>
-
-          <tr>
-
-            <td>Nov 14, 2026</td>
-
-            <td>Incoming Account Credit</td>
-
-            <td>OBK203845</td>
-
-            <td class="amount">+$100,000.00</td>
-
-            <td><span class="status">Completed</span></td>
-
-          </tr>
-
-        </tbody>
-
-      </table>
-
-    </div>
-
-  </section>
+<tr>
+<td>Nov 14, 2026</td>
+<td>Incoming Account Credit</td>
+<td>OBK203845</td>
+<td class="amount">+$100,000.00</td>
+<td><span class="status">Completed</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
 
 </main>
 
 <footer>
-
-  © 2026 Oakbridge Financial Bank · Fictional demonstration
-
+© 2026 Oakbridge Financial Bank · Illustrative banking demonstration
 </footer>
 
 </body>
-
 </html>
